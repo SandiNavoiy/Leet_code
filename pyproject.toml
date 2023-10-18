@@ -6,8 +6,10 @@ authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.12,<3.13"
 isort = "^5.12.0"
+numpy = "^1.26.1"
+pandas = "^2.1.1"
 
 
 [build-system]
