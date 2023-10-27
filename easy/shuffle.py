@@ -20,4 +20,3 @@ x = m.shuffle(nums, nlens)
 print(x)
 
 assert x == [1,2,1,2]
-#1,1,2,2
