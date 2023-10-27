@@ -1,11 +1,23 @@
 class Solution:
     def shuffle(self, nums: list[int], n: int) -> list[int]:
-        nums.sort()
-        return nums
+        """перестановка списка"""
+        new_iter = n
+        new_iter1 = int(0)
+        new_list = []
+        for i in range(n):
+            new_list.append(nums[new_iter1])
+            new_list.append(nums[new_iter])
+            new_iter1 += 1
+            new_iter += 1
+        return new_list
 
 
-nums = [2,5,1,3,4,7]
-n = int(3)
+nums = [1,1,2,2]
+nlens = int(len(nums) / 2)
 
 m = Solution()
-print(m.shuffle(nums, n))
+x = m.shuffle(nums, nlens)
+print(x)
+
+assert x == [1,2,1,2]
+#1,1,2,2
