@@ -9,7 +9,7 @@ class ParkingSystem:
     def addCar(self, carType: int) -> bool:
         if carType == 1:
             if self.big > 0:
-                self.big = self.big -1
+                self.big = self.big - 1
 
                 return True
             else:
@@ -28,9 +28,6 @@ class ParkingSystem:
                 return True
             else:
                 return False
-
-
-
 
 
 obj = ParkingSystem(1, 1, 0)

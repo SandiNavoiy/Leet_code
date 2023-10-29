@@ -4,12 +4,11 @@ class Solution:
         sum = 0
         for i in jewels:
             x = stones.count(i)
-            sum = sum +x
-
+            sum = sum + x
 
         return sum
 
-sol = Solution()
-number = sol.numJewelsInStones('z', 'ZZ')
-print(number)
 
+sol = Solution()
+number = sol.numJewelsInStones("z", "ZZ")
+print(number)

@@ -8,9 +8,8 @@ class Solution:
         return sum
 
 
-
-hours = [0,1,2,3,4]
+hours = [0, 1, 2, 3, 4]
 target = 2
 
-s  = Solution()
+s = Solution()
 print(s.numberOfEmployeesWhoMetTarget(hours, target))

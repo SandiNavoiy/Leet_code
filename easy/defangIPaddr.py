@@ -1,6 +1,9 @@
 import ipaddress
+
+
 class Solution(object):
     """Изменение и проверка IP адреса"""
+
     def defangIPaddr(self, address):
         """
         :type address: str

@@ -12,11 +12,11 @@ class Solution:
         return new_list
 
 
-nums = [1,1,2,2]
+nums = [1, 1, 2, 2]
 nlens = int(len(nums) / 2)
 
 m = Solution()
 x = m.shuffle(nums, nlens)
 print(x)
 
-assert x == [1,2,1,2]
+assert x == [1, 2, 1, 2]
