@@ -9,8 +9,9 @@ class Solution:
                 ans.append(False)
         return ans
 
-candies = [4,2,1,1,2]
+
+candies = [4, 2, 1, 1, 2]
 extraCandies = 1
 s = Solution()
 print(s.kidsWithCandies(candies, extraCandies))
-#[true,true,true,false,true]
+# [true,true,true,false,true]

@@ -3,8 +3,7 @@ class Solution:
         return num1 + num2
 
 
-
 num1 = 12
 num2 = 5
 s = Solution()
-print(s.sum(num1,num2))
+print(s.sum(num1, num2))

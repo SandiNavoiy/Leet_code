@@ -9,7 +9,6 @@ class Solution:
         return iter
 
 
-
-nums = [1,5,0,3,5]
+nums = [1, 5, 0, 3, 5]
 s = Solution()
 print(s.minimumOperations(nums))

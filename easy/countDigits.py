@@ -8,6 +8,7 @@ class Solution:
 
         return sum
 
+
 num = 1248
-s= Solution()
+s = Solution()
 print(s.countDigits(num))
