@@ -7,10 +7,12 @@ class Solution:
         else:
             for j in nums:
                 if j == original:
-                    original  = original * 2
+                    original = original * 2
 
             return original
-nums = [8,19,4,2,15,3]
+
+
+nums = [8, 19, 4, 2, 15, 3]
 original = 2
 s = Solution()
 print(s.findFinalValue(nums, original))
