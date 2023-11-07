@@ -6,10 +6,8 @@ class Solution:
             if i != "i":
                 new_str = new_str + i
             else:
-                new_str = ''.join(reversed(new_str))
+                new_str = "".join(reversed(new_str))
         return new_str
-
-
 
 
 s = "string"

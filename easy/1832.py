@@ -3,7 +3,7 @@ class Solution:
         """Проверьте, является ли предложение панграммой"""
         alf = "abcdefghijklmnopqrstuvwxyz"
         sum = 0
-        for i in  alf:
+        for i in alf:
             if i in sentence:
                 sum += 1
 
@@ -12,9 +12,6 @@ class Solution:
             return True
         else:
             return False
-
-
-
 
 
 sentence = "thequickbrownfoxjumpsoverthelazydog"

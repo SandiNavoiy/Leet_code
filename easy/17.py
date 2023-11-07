@@ -2,7 +2,7 @@ class Solution:
     def isPalindrome(self, x: int) -> bool:
         """Палиндром"""
         strrr = str(x)
-        if strrr == strrr[: :-1]:
+        if strrr == strrr[::-1]:
             return True
         else:
             return False

@@ -5,7 +5,6 @@ class Solution:
         l_val = []
         ans = 0
         for i in s:
-
             if i == "R":
                 r_val.append("R")
 
@@ -17,9 +16,9 @@ class Solution:
                 l_val.clear()
                 ans += 1
 
-        return (ans)
+        return ans
 
 
-s = 'RLRRLLRLRL'
+s = "RLRRLLRLRL"
 sol = Solution()
 print(sol.balancedStringSplit(s))

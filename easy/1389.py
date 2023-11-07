@@ -6,8 +6,10 @@ class Solution:
             new.insert(index[i], nums[i])
 
         return new
-nums = [0,1,2,3,4]
-index = [0,1,2,2,1]
+
+
+nums = [0, 1, 2, 3, 4]
+index = [0, 1, 2, 2, 1]
 
 s = Solution()
 print(s.createTargetArray(nums, index))

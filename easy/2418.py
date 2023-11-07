@@ -9,10 +9,8 @@ class Solution:
         return new_arr
 
 
-
-
-names = ["Мэри","Джон","Эмма"]
-heights = [180,165,170]
+names = ["Мэри", "Джон", "Эмма"]
+heights = [180, 165, 170]
 
 s = Solution()
 print(s.sortPeople(names, heights))

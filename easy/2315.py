@@ -11,7 +11,8 @@ class Solution:
                     sum = sum + 1
         return sum
 
+
 s = "l|*e*et|c**o|*de|"
 
-sol =  Solution()
+sol = Solution()
 print(sol.countAsterisks(s))

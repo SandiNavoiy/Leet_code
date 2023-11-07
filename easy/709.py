@@ -3,6 +3,8 @@ class Solution:
         """"""
 
         return s.lower()
+
+
 ss = "МИЛЫЙ"
 
 s = Solution()

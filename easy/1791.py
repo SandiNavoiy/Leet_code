@@ -1,7 +1,7 @@
 class Solution:
     def findCenter(self, edges: list[list[int]]) -> int:
         """Найти центр звездного графика"""
-        new  = []
+        new = []
         res = 0
         for i in edges:
             for j in i:
@@ -11,6 +11,8 @@ class Solution:
                 res = i
 
         return res
+
+
 edges = [[1, 2], [2, 3], [4, 2]]
 s = Solution()
 print(s.findCenter(edges))

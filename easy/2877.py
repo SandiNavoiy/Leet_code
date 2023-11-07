@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def createDataframe(student_data: list[list[int]]) -> pd.DataFrame:
     """Создать DataFrame из списка"""
     w = []
@@ -11,6 +12,7 @@ def createDataframe(student_data: list[list[int]]) -> pd.DataFrame:
 
     return pd.DataFrame(data)
 
-student_data =  [[1, 15], [2, 11], [3, 11], [4, 20]]
+
+student_data = [[1, 15], [2, 11], [3, 11], [4, 20]]
 print(createDataframe(student_data))
-#data = {'Name': ['Tom', 'Joseph', 'Krish', 'John'], 'Age': [20, 21, 19, 18]}
+# data = {'Name': ['Tom', 'Joseph', 'Krish', 'John'], 'Age': [20, 21, 19, 18]}
