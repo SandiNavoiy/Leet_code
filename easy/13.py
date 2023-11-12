@@ -1,8 +1,14 @@
 class Solution:
     def romanToInt(self, s: str) -> int:
         """Роман в целое число"""
-        s = s.replace("CM", "DCCCC").replace("CD", "CCCC").replace("XC", "LXXXX").replace("XL", "XXXX").replace("IX", "VIIII").replace("IV", "IIII")
-
+        s = (
+            s.replace("CM", "DCCCC")
+            .replace("CD", "CCCC")
+            .replace("XC", "LXXXX")
+            .replace("XL", "XXXX")
+            .replace("IX", "VIIII")
+            .replace("IV", "IIII")
+        )
 
         roman_numbers = {
             "M": 1000,
@@ -19,15 +25,14 @@ class Solution:
             "IV": 4,
             "I": 1,
         }
-        sum  = 0
+        sum = 0
         for i in s:
-
             sum = sum + roman_numbers[i]
 
         return sum
 
-s = "MCMXCIV"
-#1994
-sol =Solution()
-print(sol.romanToInt(s))
 
+s = "MCMXCIV"
+# 1994
+sol = Solution()
+print(sol.romanToInt(s))

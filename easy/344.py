@@ -8,7 +8,6 @@ class Solution:
         return s
 
 
-s = ["h","e","l","l","o"]
+s = ["h", "e", "l", "l", "o"]
 sol = Solution()
 print(sol.reverseString(s))
-

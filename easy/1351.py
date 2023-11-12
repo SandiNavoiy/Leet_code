@@ -8,6 +8,7 @@ class Solution:
                     itern += 1
         return itern
 
-grid = [[4,3,2,-1],[3,2,1,-1],[1,1,-1,-2],[-1,-1,-2,- 3]]
+
+grid = [[4, 3, 2, -1], [3, 2, 1, -1], [1, 1, -1, -2], [-1, -1, -2, -3]]
 s = Solution()
 print(s.countNegatives(grid))

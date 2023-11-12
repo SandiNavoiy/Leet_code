@@ -13,7 +13,8 @@ class Solution:
 
         return output
 
-nums = [1,3,4,1,2,3,1]
+
+nums = [1, 3, 4, 1, 2, 3, 1]
 s = Solution()
 print(s.findMatrix(nums))
-#[[1,3,4,2],[1,3],[1]]
+# [[1,3,4,2],[1,3],[1]]

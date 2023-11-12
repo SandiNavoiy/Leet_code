@@ -3,11 +3,10 @@ class Solution:
         """Подсчет слов с заданным префиксом"""
         ss = 0
         for i in words:
-            if pref in i[0:len(pref)]:
+            if pref in i[0 : len(pref)]:
                 ss += 1
 
         return ss
-
 
 
 words = ["pay", "attention ", "practice", "attend "]
