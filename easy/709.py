@@ -3,9 +3,3 @@ class Solution:
         """"""
 
         return s.lower()
-
-
-ss = "МИЛЫЙ"
-
-s = Solution()
-print(s.toLowerCase(ss))
