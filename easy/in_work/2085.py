@@ -3,7 +3,7 @@ class Solution:
         """"""
         ss = 0
         for i in words1:
-            if i in words2 and words1.count(i) == 1:
+            if i in words2 and words1.count(i) == 1 and words2.count(i) == 1:
                 ss = ss + 1
         return ss
 
