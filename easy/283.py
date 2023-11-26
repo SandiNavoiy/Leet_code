@@ -10,8 +10,10 @@ class Solution:
             if nums[i] != 0:
                 nums[non_zero_index], nums[i] = nums[i], nums[non_zero_index]
                 non_zero_index += 1
-nums = [0,0,1]
-#1,0,0]
+
+
+nums = [0, 0, 1]
+# 1,0,0]
 
 s = Solution()
 print(s.moveZeroes(nums))

@@ -1,6 +1,6 @@
 class Solution:
     def digitCount(self, num: str) -> bool:
-        """ . Проверьте, имеет ли число одинаковое количество цифр и значение цифры"""
+        """. Проверьте, имеет ли число одинаковое количество цифр и значение цифры"""
         ee = []
         for i in range(len(num)):
             print(num.count(str(i)))
@@ -12,6 +12,7 @@ class Solution:
                 ee.append(False)
                 return False
         return ee
+
 
 num = "030"
 s = Solution()

@@ -9,7 +9,8 @@ class Solution:
                     new.append(j)
         return list(set(new))
 
-nums = [3,2,4]
+
+nums = [3, 2, 4]
 target = 6
 s = Solution()
 print(s.twoSum(nums, target))

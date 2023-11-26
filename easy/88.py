@@ -3,16 +3,13 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        num1 = nums1[0: m]
-        num2 = nums2[0: n]
+        num1 = nums1[0:m]
+        num2 = nums2[0:n]
         nums = num1 + num2
         nums.sort()
         nums1 = []
         nums1 = nums
         return nums1
-
-
-
 
 
 nums1 = [1, 2, 3, 0, 0, 0]

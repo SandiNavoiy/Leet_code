@@ -3,11 +3,9 @@ class Solution:
         amm = 100
         temp = (amm - purchaseAmount) // 10
         if (amm - purchaseAmount) % 10 <= 5:
-            return  temp * 10
+            return temp * 10
         else:
             return (temp + 1) * 10
-
-
 
 
 purchaseAmount = 15

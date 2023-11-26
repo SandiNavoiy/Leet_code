@@ -10,6 +10,8 @@ class Solution:
             return True
         else:
             return False
+
+
 s = "fhojjkontbncdhwxbnexplclvjyexzsvqyyhpfpnvhdskuhkuoihiqgalklqketjikdlgrawhfo"
 
 sol = Solution()

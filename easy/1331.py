@@ -6,7 +6,7 @@ class Solution:
         for i in range(len(sortes_arr)):
             indexed_arr[sortes_arr[i]] = i + 1
         for i in range(len(arr)):
-             arr[i] = indexed_arr[arr[i]]
+            arr[i] = indexed_arr[arr[i]]
 
         return arr
 

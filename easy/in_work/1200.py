@@ -10,7 +10,6 @@ class Solution:
         return n
 
 
-arr = [4,2,1,3]
+arr = [4, 2, 1, 3]
 s = Solution()
 print(s.minimumAbsDifference(arr))
-

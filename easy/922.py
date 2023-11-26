@@ -14,8 +14,8 @@ class Solution:
             new.append(list_nechet[i])
         return new
 
-nums = [4,2,5,7]
+
+nums = [4, 2, 5, 7]
 
 s = Solution()
 print(s.sortArrayByParityII(nums))
-

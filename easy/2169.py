@@ -16,4 +16,4 @@ num1 = 2
 num2 = 3
 
 s = Solution()
-print(s.countOperations(num1,num2))
+print(s.countOperations(num1, num2))

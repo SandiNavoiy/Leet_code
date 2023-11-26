@@ -8,6 +8,8 @@ class Solution:
             if sum(new) <= sum(nums[i::]):
                 new.append(nums[i])
         return new
-nums = [4,3,10,9,8]
+
+
+nums = [4, 3, 10, 9, 8]
 s = Solution()
 print(s.minSubsequence(nums))

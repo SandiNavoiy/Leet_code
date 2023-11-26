@@ -7,9 +7,9 @@ class Solution:
                 ss = ss + 1
         return ss
 
-word1 = ["a","ab"]
-words2 = ["a","a","a","ab"]
+
+word1 = ["a", "ab"]
+words2 = ["a", "a", "a", "ab"]
 
 s = Solution()
 print(s.countWords(word1, words2))
-

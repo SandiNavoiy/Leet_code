@@ -7,7 +7,8 @@ class Solution:
         x = sum(salary[1:-1]) / len(salary[1:-1])
         return x
 
-salary = [4000,3000,1000,2000]
+
+salary = [4000, 3000, 1000, 2000]
 
 s = Solution()
 print(s.average(salary))

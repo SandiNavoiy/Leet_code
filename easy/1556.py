@@ -9,13 +9,14 @@ class Solution:
 
             new = ""
             for i in range(len(y)):
-
-                if  i % 3 == 0 and i != 0:
+                if i % 3 == 0 and i != 0:
                     new = new + "." + y[i]
                 else:
                     new = new + y[i]
 
         return new[::-1]
+
+
 n = 1234
 s = Solution()
 print(s.thousandSeparator(n))

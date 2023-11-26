@@ -8,6 +8,8 @@ class Solution:
             n.append(int(i))
 
         return n
-digits = [1,2,3]
+
+
+digits = [1, 2, 3]
 s = Solution()
 print(s.plusOne(digits))

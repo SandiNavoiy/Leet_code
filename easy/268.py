@@ -7,7 +7,7 @@ class Solution:
                 return i
 
 
-nums = [9,6,4,2,3,5,7,0,1]
+nums = [9, 6, 4, 2, 3, 5, 7, 0, 1]
 
-s =  Solution()
+s = Solution()
 print(s.missingNumber(nums))

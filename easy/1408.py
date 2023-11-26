@@ -8,7 +8,9 @@ class Solution:
                     new.append(j)
 
         return list(set(new))
-word = ["leetcoder","leetcode","od","hamlet","am"]
+
+
+word = ["leetcoder", "leetcode", "od", "hamlet", "am"]
 
 s = Solution()
 print(s.stringMatching(word))

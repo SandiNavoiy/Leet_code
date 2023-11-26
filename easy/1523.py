@@ -4,7 +4,7 @@ class Solution:
         new = 0
         if low == high:
             return int(low % 2 != 0)
-        for i in range(low,high + 1):
+        for i in range(low, high + 1):
             if i % 2 != 0:
                 new += 1
 
@@ -16,5 +16,3 @@ high = 11
 
 s = Solution()
 print(s.countOdds(low, high))
-
-

@@ -7,6 +7,7 @@ class Solution:
         else:
             return 0
 
+
 s = "   fly me   to   the moon  "
 
 sol = Solution()

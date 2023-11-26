@@ -10,6 +10,8 @@ class Solution:
             num = sum
 
         return num
+
+
 num = 38
 s = Solution()
 print(s.addDigits(num))

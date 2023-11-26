@@ -9,6 +9,7 @@ class Solution:
                 arr[i] = arr[i].title()
         return " ".join(arr)
 
+
 title = "capiTalIze tHe titLe"
 s = Solution()
 print(s.capitalizeTitle(title))

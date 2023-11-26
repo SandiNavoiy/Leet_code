@@ -5,15 +5,12 @@ class Solution:
         m = 0
 
         for i in nums:
-
             if nums.count(i) > n:
                 n = nums.count(i)
                 m = i
         return m
 
 
-
-
-nums = [3,2,3]
+nums = [3, 2, 3]
 s = Solution()
 print(s.majorityElement(nums))

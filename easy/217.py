@@ -6,9 +6,7 @@ class Solution:
         else:
             return True
 
-nums = [1,2,3,1]
+
+nums = [1, 2, 3, 1]
 s = Solution()
 print(s.containsDuplicate(nums))
-
-
-

@@ -13,7 +13,6 @@ class Solution:
             return -1
 
 
-
-nums = [-1,-2,-3,-4,3,2,1]
+nums = [-1, -2, -3, -4, 3, 2, 1]
 s = Solution()
 print(s.arraySign(nums))
