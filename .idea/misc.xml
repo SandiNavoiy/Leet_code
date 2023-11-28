@@ -5,5 +5,5 @@
     <option name="enabledOnSave" value="true" />
     <option name="sdkName" value="Poetry (Leet_code)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Poetry (Leet_code)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Poetry (pythonProject)" project-jdk-type="Python SDK" />
 </project>
