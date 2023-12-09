@@ -1,12 +1,12 @@
 class Solution:
     def numberOfPairs(self, nums: list[int]) -> list[int]:
         """"""
-        new = []
+        x = 0
+        y = set()
         for i in nums:
-            print(nums.count(i))
-            if nums.count(i) == 1:
-                new.append(i)
-        return new
+            print(i)
+        return [x]
+
 nums = [1,3,2,1,3,2,2]
 s = Solution()
 print(s.numberOfPairs(nums))
