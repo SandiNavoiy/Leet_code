@@ -1,13 +1,16 @@
 class Solution:
     def findDuplicates(self, nums: list[int]) -> list[int]:
-        """Найти все дубликаты в массиве"""
-        ui = []
-        for i in nums:
-            if nums.count(i) == 2:
-                ui.append(i)
-        return list(set(ui))
+        seen = set()
+        duplicates = set()
 
+        for num in nums:
+            if num in seen:
+                duplicates.add(num)
+            else:
+                seen.add(num)
+
+        return list(duplicates)
 
 nums = [4, 3, 2, 7, 8, 2, 3, 1]
-sol = Solution()
-print(sol.findDuplicates(nums))
+s = Solution()
+print(s.findDuplicates(nums))
