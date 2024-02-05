@@ -8,7 +8,9 @@ class Solution:
             if nums[i] == target:
                 n.append(i)
         return n
-nums = [1,2,5,2,3]
+
+
+nums = [1, 2, 5, 2, 3]
 target = 3
 
 s = Solution()

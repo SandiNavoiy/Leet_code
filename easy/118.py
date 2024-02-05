@@ -8,7 +8,6 @@ class Solution:
         return row
 
 
-
 numRows = 5
 s = Solution()
 print(s.generate(numRows))

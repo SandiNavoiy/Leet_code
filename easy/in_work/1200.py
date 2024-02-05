@@ -3,7 +3,6 @@ class Solution:
         """Минимальная абсолютная разница"""
 
 
-
 arr = [4, 2, 1, 3]
 s = Solution()
 print(s.minimumAbsDifference(arr))

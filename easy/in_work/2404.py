@@ -6,10 +6,8 @@ class Solution:
         x = 1
         y = []
         for i in nums:
-
-            if nums.count(i) > x and i  % 2 == 0:
-
-                x  = nums.count(i)
+            if nums.count(i) > x and i % 2 == 0:
+                x = nums.count(i)
 
                 y.append(i)
         if x == 1:
@@ -17,6 +15,7 @@ class Solution:
         else:
             return y
 
-nums = [2,10000,10000,10000,2]
+
+nums = [2, 10000, 10000, 10000, 2]
 s = Solution()
 print(s.mostFrequentEven(nums))

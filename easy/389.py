@@ -8,6 +8,8 @@ class Solution:
         else:
             x = str(set(t) - set(s))
         return x[2]
+
+
 s = "a"
 t = "aa"
 sol = Solution()

@@ -7,6 +7,7 @@ class Solution:
             print(i)
         return [x]
 
-nums = [1,3,2,1,3,2,2]
+
+nums = [1, 3, 2, 1, 3, 2, 2]
 s = Solution()
 print(s.numberOfPairs(nums))

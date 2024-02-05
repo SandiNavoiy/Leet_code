@@ -11,7 +11,6 @@ class Solution:
         return x
 
 
-
 n = 111
 
 s = Solution()

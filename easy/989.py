@@ -10,9 +10,10 @@ class Solution:
 
         ss = []
         for i in y:
-           ss.append(int(i))
+            ss.append(int(i))
 
         return ss
+
 
 num = [1, 2, 0, 0]
 k = 34

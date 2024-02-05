@@ -1,4 +1,6 @@
 import re
+
+
 class Solution:
     def strongPasswordCheckerII(self, password: str) -> bool:
         """"""
@@ -29,7 +31,6 @@ class Solution:
 
         # Если все проверки пройдены, пароль считается надежным
         return True
-
 
 
 password = "-Aa1a1a1"

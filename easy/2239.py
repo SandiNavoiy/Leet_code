@@ -6,9 +6,9 @@ class Solution:
             new.append(abs(i))
         x = new.index(min(new))
 
-
         return nums[x]
 
-nums = [2,-1,1]
+
+nums = [2, -1, 1]
 s = Solution()
 print(s.findClosestNumber(nums))

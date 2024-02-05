@@ -11,6 +11,6 @@ class Solution:
         return list(myset)
 
 
-word = ["bella","label","roller"]
+word = ["bella", "label", "roller"]
 s = Solution()
 print(s.commonChars(word))

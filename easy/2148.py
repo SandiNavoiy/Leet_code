@@ -7,6 +7,7 @@ class Solution:
 
         return x
 
-nums = [-71,-71,93,-71,40]
+
+nums = [-71, -71, 93, -71, 40]
 s = Solution()
 print(s.countElements(nums))

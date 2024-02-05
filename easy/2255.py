@@ -4,11 +4,12 @@ class Solution:
         x = 0
         for i in words:
             if s.startswith(i):
-                x +=  1
+                x += 1
 
         return x
 
-words = ["a","b","c","ab","bc","abc"]
+
+words = ["a", "b", "c", "ab", "bc", "abc"]
 s = "abc"
 sol = Solution()
 print(sol.countPrefixes(words, s))

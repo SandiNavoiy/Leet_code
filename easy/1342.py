@@ -12,6 +12,7 @@ class Solution:
 
         return x
 
+
 num = 14
 s = Solution()
 print(s.numberOfSteps(num))

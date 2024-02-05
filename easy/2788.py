@@ -8,11 +8,12 @@ class Solution:
                 new.extend(x)
             else:
                 new.append(i)
-        while '' in new:
-            new.remove('')
+        while "" in new:
+            new.remove("")
         return new
 
-words = ["$easy$","$problem$"]
+
+words = ["$easy$", "$problem$"]
 separator = "$"
 # ["one","two","three","four","five","six"]
 s = Solution()

@@ -9,7 +9,7 @@ class Solution:
                     if i - 1 == 0:
                         new.append(i + 1)
                     else:
-                        new.append(i-1)
+                        new.append(i - 1)
                 elif i + 1 not in nums:
                     new.append(i + 1)
                 break
@@ -17,6 +17,6 @@ class Solution:
         return new
 
 
-nums = [1,1]
+nums = [1, 1]
 s = Solution()
 print(s.findErrorNums(nums))

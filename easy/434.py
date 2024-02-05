@@ -9,7 +9,6 @@ class Solution:
         return len(new)
 
 
-
 s = "    "
-sol =  Solution()
+sol = Solution()
 print(sol.countSegments(s))

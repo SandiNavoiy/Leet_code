@@ -6,7 +6,9 @@ class Solution:
             if x in words[i]:
                 new.append(i)
         return new
-words = ["leet","code"]
+
+
+words = ["leet", "code"]
 x = "e"
 s = Solution()
 print(s.findWordsContaining(words, x))

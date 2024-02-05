@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 class Solution:
     def intersect(self, nums1: list[int], nums2: list[int]) -> list[int]:
         """Пересечение двух массивов II"""
@@ -14,7 +15,8 @@ class Solution:
 
         return intersection
 
-nums1 = [3,1,2]
-nums2 = [1,1]
-s= Solution()
+
+nums1 = [3, 1, 2]
+nums2 = [1, 1]
+s = Solution()
 print(s.intersect(nums1, nums2))

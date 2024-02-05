@@ -5,7 +5,9 @@ class Solution:
         new.append(list(set(nums1) - set(nums2)))
         new.append(list(set(nums2) - set(nums1)))
         return new
-nums1 = [1,2,3]
-nums2 = [2,4,6]
+
+
+nums1 = [1, 2, 3]
+nums2 = [2, 4, 6]
 s = Solution()
 print(s.findDifference(nums1, nums2))

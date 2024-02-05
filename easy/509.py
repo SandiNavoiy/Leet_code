@@ -4,7 +4,9 @@ class Solution:
             return 0
         elif n == 1:
             return 1
-        return self.fib(n-1) + self.fib(n-2)
+        return self.fib(n - 1) + self.fib(n - 2)
+
+
 n = 4
 s = Solution()
 print(s.fib(n))

@@ -17,7 +17,6 @@ class Solution:
         y = 0
         z = 0
         for i in range(len(nums)):
-
             if i % 2 == 0:
                 new.append(chet[y])
                 y += 1

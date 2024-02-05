@@ -4,7 +4,6 @@ class Solution:
         x = 0
         for i in patterns:
             if i in word:
-
                 x += 1
         return x
 
