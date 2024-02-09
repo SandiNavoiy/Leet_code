@@ -19,4 +19,4 @@ nums1 = [1, 3, 5, 2, 4]
 nums2 = [6, 5, 4, 3, 2, 1, 7]
 s = Solution()
 print(s.nextGreaterElement(nums1, nums2))
-#[7,7,7,7,7]
+# [7,7,7,7,7]
