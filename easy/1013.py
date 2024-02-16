@@ -16,7 +16,7 @@ class Solution:
         return seen == total and parts >= 3
 
 
-arr = [14,6,-10,2,18,-7,-4,11]
+arr = [14, 6, -10, 2, 18, -7, -4, 11]
 
 s = Solution()
 print(s.canThreePartsEqualSum(arr))

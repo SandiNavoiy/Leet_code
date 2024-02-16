@@ -1,6 +1,6 @@
 class Solution:
     def convertToBase7(self, num: int) -> str:
-        ''''''
+        """"""
         is_negative = False
         if num == 0:
             return str(num)
@@ -13,8 +13,9 @@ class Solution:
             result = str(remainder) + result
             num //= 7
         if is_negative:
-            result = "-" +  result
+            result = "-" + result
         return result
+
 
 num = 100
 s = Solution()

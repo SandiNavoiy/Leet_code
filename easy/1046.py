@@ -1,6 +1,6 @@
 class Solution:
     def lastStoneWeight(self, stones: list[int]) -> int:
-        ''''''
+        """"""
         while len(stones) > 2:
             stones.sort()
             print(stones)
@@ -9,7 +9,7 @@ class Solution:
             if x != y:
                 stones.pop(-1)
                 stones.pop(-1)
-                stones.append(abs(y-x))
+                stones.append(abs(y - x))
             else:
                 stones.pop(-1)
                 stones.pop(-1)
@@ -27,6 +27,6 @@ class Solution:
         return stones[0]
 
 
-stones = [2,2]
+stones = [2, 2]
 s = Solution()
 print(s.lastStoneWeight(stones))
