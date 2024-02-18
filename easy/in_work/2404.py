@@ -19,3 +19,7 @@ class Solution:
 nums = [2, 10000, 10000, 10000, 2]
 s = Solution()
 print(s.mostFrequentEven(nums))
+
+
+hjhj = " dsgdfhfgj"
+hjhj.re
