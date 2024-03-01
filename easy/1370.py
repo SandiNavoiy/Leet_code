@@ -12,9 +12,9 @@ class Solution:
             new = new + www
             new = new + rrr
 
-        return new
+        return new[:len(s)]
 
 
-s = "rat"
+s = "leetcode"
 sol = Solution()
 print(sol.sortString(s))
