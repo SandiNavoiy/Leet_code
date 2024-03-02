@@ -1,16 +1,15 @@
+from collections import defaultdict
+
+
 class Solution:
     def findShortestSubArray(self, nums: list[int]) -> int:
         """Степень массива"""
-        sol = 0
-        el = 0
-        for i in nums:
-            if nums.count(i) >= sol and i > el :
-                sol = nums.count(i)
-                el = i
-        x = []
-        left = nums.index(el)
+        c = defaultdict(list)
+        for i, j in enumerate(nums):
+            c[j].append(i)
+        degree = max([len(x) for x in c.values()])
+        return dict(c), degree
 
-        return sol, el
 
 
 nums = [1,2,2,3,1]
