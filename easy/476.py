@@ -1,6 +1,6 @@
 class Solution:
     def findComplement(self, num: int) -> int:
-        ''''''
+        """"""
         x = bin(num)[2:]
         y = ""
         for i in x:
@@ -9,7 +9,9 @@ class Solution:
             else:
                 y = y + "1"
 
-        return int(y,2)
+        return int(y, 2)
+
+
 num = 5
 
 s = Solution()

@@ -11,7 +11,8 @@ class Solution:
             c += num_boxes
         return s
 
-boxTypes = [[1,3],[2,2],[3,1]]
+
+boxTypes = [[1, 3], [2, 2], [3, 1]]
 TruckSize = 4
 s = Solution()
 print(s.maximumUnits(boxTypes, TruckSize))

@@ -11,7 +11,6 @@ class Solution:
         return dict(c), degree
 
 
-
-nums = [1,2,2,3,1]
+nums = [1, 2, 2, 3, 1]
 s = Solution()
 print(s.findShortestSubArray(nums))

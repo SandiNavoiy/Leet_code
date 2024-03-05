@@ -1,6 +1,6 @@
 class Solution:
     def findLucky(self, arr: list[int]) -> int:
-        ''''''
+        """"""
         x = 0
         char = 0
         for i in arr:
@@ -12,6 +12,6 @@ class Solution:
         return char
 
 
-arr = [2,2,3,4]
+arr = [2, 2, 3, 4]
 s = Solution()
 print(s.findLucky(arr))

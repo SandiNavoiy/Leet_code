@@ -1,6 +1,6 @@
 class Solution:
     def reformat(self, s: str) -> str:
-        ''''''
+        """"""
         x = []
         y = []
         new = []
@@ -10,9 +10,9 @@ class Solution:
             else:
                 y.append(i)
         if len(x) == 0 or len(y) == 0:
-            return ''
+            return ""
         elif len(x) - len(y) > 1 or len(y) - len(x) > 1:
-            return ''
+            return ""
         elif len(x) > len(y):
             for i in range(len(y)):
                 new.append(y[i])

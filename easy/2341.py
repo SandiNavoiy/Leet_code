@@ -8,14 +8,12 @@ class Solution:
             x[i] = nums.count(i)
         for i in x.values():
             if i % 2 == 0:
-                inn = inn + int(i/2)
+                inn = inn + int(i / 2)
             else:
                 inn = inn + int(i / 2)
-                inn_1 = inn_1 +1
-
+                inn_1 = inn_1 + 1
 
         return [inn, inn_1]
-
 
 
 nums = [1, 3, 2, 1, 3, 2, 2]

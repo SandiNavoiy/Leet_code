@@ -12,7 +12,7 @@ class Solution:
             new = new + www
             new = new + rrr
 
-        return new[:len(s)]
+        return new[: len(s)]
 
 
 s = "leetcode"

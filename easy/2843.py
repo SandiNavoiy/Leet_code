@@ -1,14 +1,14 @@
 class Solution:
     def countSymmetricIntegers(self, low: int, high: int) -> int:
         """"""
-        #счетчик
+        # счетчик
         indxx = 0
-        arr = [str(x) for x in range(low, high+1)]
+        arr = [str(x) for x in range(low, high + 1)]
 
         for i in arr:
             if len(i) % 2 == 0:
-                left = i[:int(len(i)/2)]
-                right = i[int(len(i) / 2):]
+                left = i[: int(len(i) / 2)]
+                right = i[int(len(i) / 2) :]
                 sum_left = 0
                 sum_right = 0
                 for j in left:
@@ -18,7 +18,6 @@ class Solution:
                 if sum_left == sum_right:
                     indxx += 1
         return indxx
-
 
 
 low = 1200

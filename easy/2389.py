@@ -1,6 +1,6 @@
 class Solution:
     def answerQueries(self, nums: list[int], queries: list[int]) -> list[int]:
-        ''''''
+        """"""
         new = []
         nums.sort()
         for i in queries:
@@ -10,13 +10,14 @@ class Solution:
                 total = total + j
                 count = count + 1
                 if total > i:
-                    count = count -1
+                    count = count - 1
                     break
             new.append(count)
 
         return new
 
-nums = [4,5,2,1]
-queries = [3,10,21]
+
+nums = [4, 5, 2, 1]
+queries = [3, 10, 21]
 s = Solution()
 print(s.answerQueries(nums, queries))

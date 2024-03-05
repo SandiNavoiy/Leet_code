@@ -12,6 +12,8 @@ class Solution:
         print(nums)
 
         return arr1 + arr2 + arr3
-nums = [1,6,1,5]
+
+
+nums = [1, 6, 1, 5]
 s = Solution()
 print(s.minimumCost(nums))
