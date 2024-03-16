@@ -1,4 +1,6 @@
 from collections import Counter
+
+
 class Solution:
     def intersection(self, nums: list[list[int]]) -> list[int]:
         if not nums:
