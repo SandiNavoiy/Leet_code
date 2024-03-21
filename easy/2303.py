@@ -14,6 +14,7 @@ class Solution:
                 break
         return tax
 
+
 brackets = [[3, 50], [7, 10], [12, 25]]
 income = 10
 s = Solution()
