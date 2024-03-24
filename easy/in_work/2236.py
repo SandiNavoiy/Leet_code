@@ -8,4 +8,8 @@ class TreeNode:
 class Solution:
     def checkTree(self, root: Optional[TreeNode]) -> bool:
         ''''''
+        print(root.left)
+
 root = [10,4,6]
+s = Solution()
+print(s.checkTree(root))
