@@ -8,8 +8,13 @@ class TreeNode:
 class Solution:
     def checkTree(self, root: Optional[TreeNode]) -> bool:
         ''''''
-        print(root.left)
+        return root.val==root.left.val+root.right.val
 
-root = [10,4,6]
+# Создаем дерево
+root = TreeNode(10)
+root.left = TreeNode(4)
+root.right = TreeNode(6)
+
+# Проверяем дерево
 s = Solution()
-print(s.checkTree(root))
+print(s.checkTree(root))  # True, потому что значения в левом
