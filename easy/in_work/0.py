@@ -1,2 +1,1 @@
-print(ord('e') - ord('a'))
-g
+print(bin(2|2))
