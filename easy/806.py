@@ -5,9 +5,17 @@ class Solution:
         new = []
         for i in s:
             new.append(widths[x[i]-1])
+        a = 0
+        b = 0
+        temp = 0
+        for i in range(len(new)):
+            temp = temp + new[i]
+            if temp > 100:
+                a += 1
+                temp = new[i]
 
 
-        return new
+        return [a+1, temp]
 
 
 
