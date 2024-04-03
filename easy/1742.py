@@ -10,6 +10,8 @@ class Solution:
             ballBox[ballSum] += 1
 
         return max(ballBox.values())
+
+
 lowLimit = 1
 highLimit = 10
 s = Solution()

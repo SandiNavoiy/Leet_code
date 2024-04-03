@@ -1,7 +1,7 @@
 class Solution:
     def sortVowels(self, s: str) -> str:
         """"""
-        x = ('a', 'e', 'i', 'o',  'u', 'A', 'E', 'I', 'O',  'U')
+        x = ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")
         new = []
         for i in s:
             if i in x:
@@ -14,8 +14,7 @@ class Solution:
                 new_s[i] = new[ne]
                 ne += 1
 
-        return  "".join(new_s)
-
+        return "".join(new_s)
 
 
 s = "lEetcOde"

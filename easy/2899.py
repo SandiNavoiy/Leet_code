@@ -12,13 +12,14 @@ class Solution:
                 if k > len(seen):
                     ans.append(-1)
                 else:
-                    ans.append(seen[k-1])
-                    print(seen[k-1])
+                    ans.append(seen[k - 1])
+                    print(seen[k - 1])
                     k = k + 1
 
-
         return ans
-nums = [1,-1,2,-1,-1]
+
+
+nums = [1, -1, 2, -1, -1]
 s = Solution()
 print(s.lastVisitedIntegers(nums))
-#[1, 2, 1]
+# [1, 2, 1]

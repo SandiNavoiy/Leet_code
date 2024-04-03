@@ -4,10 +4,11 @@ class Solution:
         for i in range(len(s)):
             if s[i] == "?":
                 for c in "abc":
-                    if (i == 0 or s[i-1] != c) and (i+1 == len(s) or s[i+1] != c):
+                    if (i == 0 or s[i - 1] != c) and (i + 1 == len(s) or s[i + 1] != c):
                         s[i] = c
                         break
         return "".join(s)
+
 
 s = "?zs"
 sol = Solution()

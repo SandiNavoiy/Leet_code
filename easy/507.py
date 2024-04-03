@@ -2,13 +2,13 @@ import time
 
 
 class Solution:
-
     def checkPerfectNumber(self, num: int) -> bool:
         divisors_sum = 0
         for x in range(1, num):
             if num % x == 0:
                 divisors_sum += x
         return divisors_sum == num
+
 
 # Замеряем время выполнения кода
 start_time = time.time()

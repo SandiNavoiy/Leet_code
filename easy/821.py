@@ -1,16 +1,18 @@
 class Solution:
     def shortestToChar(self, s: str, c: str) -> list[int]:
-        a=[]
-        b=[]
+        a = []
+        b = []
         for i in range(len(s)):
-            if s[i]==c:
+            if s[i] == c:
                 a.append(i)
         for i in range(len(s)):
-            c=[]
+            c = []
             for j in a:
-                c.append(abs(i-j))
+                c.append(abs(i - j))
             b.append(min(c))
         return b
+
+
 s = "loveleetcode"
 c = "e"
 sol = Solution()

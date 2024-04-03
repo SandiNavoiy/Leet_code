@@ -10,9 +10,9 @@ class Solution:
             l = r
         return ans
 
-
-
         return new
+
+
 s = "abcdddeeeeaabbbcd"
 sol = Solution()
 print(sol.largeGroupPositions(s))

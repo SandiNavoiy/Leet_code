@@ -11,7 +11,6 @@ class Solution:
                 y.clear()
                 y.append(i)
             elif nums.count(i) == x and i % 2 == 0:
-
                 y.append(i)
         if x == 0:
             return -1
@@ -22,4 +21,3 @@ class Solution:
 nums = [1]
 s = Solution()
 print(s.mostFrequentEven(nums))
-

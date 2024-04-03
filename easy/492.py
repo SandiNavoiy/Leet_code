@@ -5,7 +5,6 @@ class Solution:
                 return [area // l, l]
 
 
-
 area = 122122
 s = Solution()
 print(s.constructRectangle(area))
