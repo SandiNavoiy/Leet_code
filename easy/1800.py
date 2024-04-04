@@ -4,7 +4,6 @@ class Solution:
 
         curr = nums[0]
         for i, n in enumerate(nums[1:]):
-
             if n <= nums[i]:
                 res = max(res, curr)
                 curr = n
