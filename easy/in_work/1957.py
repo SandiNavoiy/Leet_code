@@ -1,13 +1,22 @@
 class Solution:
     def makeFancyString(self, s: str) -> str:
         ''''''
-        new = [x for x in s]
-        new1 = []
-        for i in range(len(new)-2):
-            if new[i] !=  new[i+1] and new[i+2] != new[i]:
-                new1.append(new[i])
+        ans = ""
+        new = []
+        count = 0
+        for i in s:
 
-        return new1
+            if ans == i:
+                count += 1
+                if count <= 1:
+                    new.append(i)
+            else:
+                count = 0
+                new.append(i)
+            ans = i
+
+
+        return "".join(new)
 s = "leeetcode"
 sol = Solution()
 print(sol.makeFancyString(s))
