@@ -14,7 +14,15 @@ class Solution:
         if startMonth == endMonth:
             return endDay - startDay + 1
         elif startMonth < endMonth:
-            return months[startMonth] - startDay + endDay + 1 + sum(months[m] for m in range(startMonth + 1, endMonth))
+            return (
+                months[startMonth]
+                - startDay
+                + endDay
+                + 1
+                + sum(months[m] for m in range(startMonth + 1, endMonth))
+            )
+
+
 arriveAlice = "08-15"
 leaveAlice = "08-18"
 arriveBob = "08-16"

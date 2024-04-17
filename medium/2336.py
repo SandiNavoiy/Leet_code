@@ -1,5 +1,4 @@
 class SmallestInfiniteSet:
-
     def __init__(self):
         self.n = [x for x in range(1, 1001)]
 
@@ -11,6 +10,8 @@ class SmallestInfiniteSet:
         if num not in self.n:
             self.n.append(num)
             self.n.sort()
+
+
 num = 5
 # Your SmallestInfiniteSet object will be instantiated and called as such:
 obj = SmallestInfiniteSet()

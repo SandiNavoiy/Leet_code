@@ -1,6 +1,6 @@
 class Solution:
     def findKDistantIndices(self, nums: list[int], key: int, k: int) -> list[int]:
-        ''''''
+        """"""
         new = []
         x = len(nums)
         for i in range(x):
@@ -10,7 +10,8 @@ class Solution:
                         new.append(i)
         return new
 
-nums = [2,2,2,2,2]
+
+nums = [2, 2, 2, 2, 2]
 key = 2
 k = 2
 s = Solution()

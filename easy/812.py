@@ -1,6 +1,5 @@
 class Solution:
     def largestTriangleArea(self, points: list[list[int]]) -> float:
-
         area = 0
         n = len(points)
         for i in range(n):

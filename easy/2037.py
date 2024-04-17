@@ -1,6 +1,6 @@
 class Solution:
     def minMovesToSeat(self, seats: list[int], students: list[int]) -> int:
-        ''''''
+        """"""
         sss = 0
         seats.sort()
         students.sort()
@@ -9,7 +9,8 @@ class Solution:
 
         return sss
 
-seats = [3,1,5]
-students = [2,7,4]
+
+seats = [3, 1, 5]
+students = [2, 7, 4]
 s = Solution()
 print(s.minMovesToSeat(seats, students))

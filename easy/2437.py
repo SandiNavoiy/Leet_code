@@ -26,6 +26,8 @@ class Solution:
             res *= 10
 
         return res
+
+
 time = "??:??"
 s = Solution()
 print(s.countTime(time))  # Ответ: 1440

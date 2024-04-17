@@ -1,7 +1,6 @@
 class Solution:
     def findRestaurant(self, list1: list[str], list2: list[str]) -> list[str]:
-        ''''''
-
+        """"""
 
         new = list(set(list1) & set(list2))
 
@@ -17,11 +16,10 @@ class Solution:
                 if i not in x:
                     x.append(i)
 
-
         return x
 
 
-list1 = ["happy","sad","good"]
-list2 = ["sad","happy","good"]
+list1 = ["happy", "sad", "good"]
+list2 = ["sad", "happy", "good"]
 s = Solution()
 print(s.findRestaurant(list1, list2))

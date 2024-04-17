@@ -1,8 +1,8 @@
 class Solution:
     def countQuadruplets(self, nums: list[int]) -> int:
-        ''''''
+        """"""
         ss = 0
-        for a in range(len(nums )):
+        for a in range(len(nums)):
             for b in range(a, len(nums)):
                 for c in range(b, len(nums)):
                     for d in range(b, len(nums)):
@@ -10,6 +10,8 @@ class Solution:
                             ss = ss + 1
 
         return ss
-nums = [1,2,3,6]
+
+
+nums = [1, 2, 3, 6]
 s = Solution()
 print(s.countQuadruplets(nums))

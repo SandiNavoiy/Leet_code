@@ -3,11 +3,7 @@ class Solution:
         if len(s) != len(goal):
             return False
 
-        different_letters = [
-            (a, b)
-            for a, b in zip(s, goal)
-            if a != b
-        ]
+        different_letters = [(a, b) for a, b in zip(s, goal) if a != b]
 
         if len(different_letters) != 2:
             # If two strings are the same, then we just need to swap duplicates

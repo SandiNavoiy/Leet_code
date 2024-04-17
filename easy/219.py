@@ -7,7 +7,9 @@ class Solution:
                 return True
             num_index[num] = i  # Обновляем индекс числа
         return False
-nums = [1,2,3,1,2,3]
+
+
+nums = [1, 2, 3, 1, 2, 3]
 k = 2
 s = Solution()
 print(s.containsNearbyDuplicate(nums, k))
