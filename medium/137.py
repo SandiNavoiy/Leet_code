@@ -1,6 +1,4 @@
 from collections import Counter
-
-
 class Solution:
     def singleNumber(self, nums: list[int]) -> int:
         ''''''
@@ -8,8 +6,6 @@ class Solution:
         for i, j in c.items():
             if j == 1:
                 return i
-
-
 
 nums = [2,2,3,2]
 s = Solution()
