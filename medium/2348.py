@@ -1,13 +1,13 @@
 class Solution:
     def zeroFilledSubarray(self, nums: list[int]) -> int:
         # approach 1
-        count,result=0,0
+        count, result = 0, 0
         for i in range(len(nums)):
-            if nums[i]==0:
-                count+=1
+            if nums[i] == 0:
+                count += 1
             else:
-                count=0
-            result=result+count
+                count = 0
+            result = result + count
         return result
 
 
