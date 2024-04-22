@@ -5,3 +5,7 @@ class Solution:
 nums = [3,4,5,1,2]
 s = Solution()
 print(s.findMin(nums))
+
+
+
+№
