@@ -1,9 +1,9 @@
 class Solution:
-    def findMin(self, nums: list[int]) -> int:
-        """"""
-        return min(nums)
+    def searchRange(self, nums:list[int], target: int) -> list[int]:
+        ''''''
 
 
-nums = [3, 4, 5, 1, 2]
+nums = [5,7,7,8,8,10]
+target = 8
 s = Solution()
-print(s.findMin(nums))
+print(s.searchRange(nums, target))
