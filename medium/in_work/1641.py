@@ -6,11 +6,9 @@ class Solution:
         """"""
         glass = ("a", "e", "i", "o", "u")
         new = list(combinations(glass, n))
-        if n > 1:
-            return len(new) + 5 * (n - 1)
-        return len(new)
+        print(new)
 
 
-n = 33
+n = 2
 s = Solution()
 print(s.countVowelStrings(n))
