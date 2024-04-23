@@ -1,8 +1,8 @@
 class Solution:
     def complexNumberMultiply(self, num1: str, num2: str) -> str:
         """"""
-        a1, b1 = num1.split('+')
-        a2, b2 = num2.split('+')
+        a1, b1 = num1.split("+")
+        a2, b2 = num2.split("+")
         if "+-" in num1 or "+-" in num2:
             flaf = 1
         else:
@@ -17,18 +17,13 @@ class Solution:
             rez = rez.replace("j", "i")
             return "0+" + rez
         else:
-            if rez.imag <0:
-
+            if rez.imag < 0:
                 return str(int(rez.real)) + "+" + str(int(rez.imag)) + "i"
-
 
             else:
                 rez = str(rez)
                 rez = rez.replace("j", "i")
                 return rez[1:-1]
-
-
-
 
 
 num1 = "20+22i"

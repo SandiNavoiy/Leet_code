@@ -1,5 +1,4 @@
 class CustomStack:
-
     def __init__(self, maxSize: int):
         self.maxSize = maxSize
         self.m = []
@@ -15,11 +14,13 @@ class CustomStack:
 
     def increment(self, k: int, val: int) -> None:
         if k <= len(self.m):
-            for i in range(0,k):
+            for i in range(0, k):
                 self.m[i] = self.m[i] + val
         else:
-            for i in range(0,len(self.m)):
+            for i in range(0, len(self.m)):
                 self.m[i] = self.m[i] + val
+
+
 maxSize = 3
 # Your CustomStack object will be instantiated and called as such:
 obj = CustomStack(maxSize)
