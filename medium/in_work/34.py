@@ -13,6 +13,7 @@ class Solution:
 
         while low <= high:
             medium = (high + low) // 2
+            print(medium)
 
             if nums[medium] == target:
                 if target == nums[medium-1]:
