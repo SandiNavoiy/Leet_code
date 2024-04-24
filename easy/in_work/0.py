@@ -1,9 +1,5 @@
-class Solution:
-    def searchRange(self, nums: list[int], target: int) -> list[int]:
-        """"""
+from random import choice
+from string import ascii_letters
 
 
-nums = [5, 7, 7, 8, 8, 10]
-target = 8
-s = Solution()
-print(s.searchRange(nums, target))
+print(''.join(choice(ascii_letters) for i in range(12)))
