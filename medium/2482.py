@@ -17,3 +17,4 @@ class Solution:
 grid = [[1,1,1],[1,1,1]]
 s = Solution()
 print(s.onesMinusZeros(grid))
+''''''
