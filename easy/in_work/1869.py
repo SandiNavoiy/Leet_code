@@ -18,8 +18,10 @@ class Solution:
                     col_0 = temp_0
                 temp_0 = 0
                 temp_1 = temp_1 + 1
-        print(col_0)
+        col_1 = temp_1
+        col_0 = temp_0
         print(col_1)
+        print(col_0)
 
         if col_0 < col_1:
             return True
