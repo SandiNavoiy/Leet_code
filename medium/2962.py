@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 class Solution:
     def countSubarrays(self, nums: list[int], k: int) -> int:
         mmm = max(nums)
@@ -14,7 +15,9 @@ class Solution:
                 new += len(nums) - j + 1
             counter[nums[i]] -= 1
         return new
-nums = [1,3,2,3,3]
+
+
+nums = [1, 3, 2, 3, 3]
 k = 2
 s = Solution()
 print(s.countSubarrays(nums, k))

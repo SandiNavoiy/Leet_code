@@ -1,6 +1,6 @@
 class Solution:
     def canMakeSquare(self, grid: list[list[str]]) -> bool:
-        ''''''
+        """"""
         grid1 = [
             [grid[0][0], grid[0][1], grid[1][0], grid[1][1]],
             [grid[0][1], grid[0][2], grid[1][1], grid[1][2]],
@@ -12,6 +12,7 @@ class Solution:
                 return True
         return False
 
+
 s = Solution()
-grid = [["B","W","B"],["B","W","W"],["B","W","B"]]
+grid = [["B", "W", "B"], ["B", "W", "W"], ["B", "W", "B"]]
 print(s.canMakeSquare(grid))

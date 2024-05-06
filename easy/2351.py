@@ -9,7 +9,6 @@ class Solution:
                 return i
 
 
-
 s = "abccbaacz"
 sol = Solution()
 print(sol.repeatedCharacter(s))

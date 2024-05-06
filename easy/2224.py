@@ -10,21 +10,18 @@ class Solution:
 
         x = x - 60 * (x // 60)
 
-
-
-        if x ==0:
+        if x == 0:
             return t
-
 
         t = t + x // 15
 
         x = x - 15 * (x // 15)
 
-        if x ==0:
+        if x == 0:
             return t
         t = t + x // 5
         x = x - 5 * (x // 5)
-        if x ==0:
+        if x == 0:
             return t
 
         return t + x

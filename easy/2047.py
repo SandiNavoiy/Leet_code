@@ -1,9 +1,9 @@
 class Solution:
     def countValidWords(self, sentence: str) -> int:
-        ''''''
+        """"""
         rez = []
 
-        new = sentence.split(' ')
+        new = sentence.split(" ")
         for i in new:
             if any(char.isdigit() for char in i):
                 pass
@@ -28,12 +28,9 @@ class Solution:
             elif i.count("?") == 1 and i[-1] != "?":
                 pass
             elif i.count("-") == 1:
-
                 x = i.index("-")
-                if x  != 0 and x  != len(i)-1 :
-
-
-                    if  i[x - 1].isalpha()  and   i[x + 1].isalpha():
+                if x != 0 and x != len(i) - 1:
+                    if i[x - 1].isalpha() and i[x + 1].isalpha():
                         rez.append(i)
             else:
                 rez.append(i)
