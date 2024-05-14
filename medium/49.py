@@ -1,21 +1,17 @@
+import collections
+
+
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
-        """"""
-        ss = []
-        new = []
-        rez = []
-        for i in range(len(strs)):
-            if strs[i] not in ss:
-                temp = [strs[i]]
-                for j in range(len(strs)):
-                    if set(strs[i]) == set(strs[j]) and i != j:
-                        temp.append(strs[j])
-                        ss.append(strs[j])
-                new.append(temp)
-        new.sort()
-        return new
+        grouped_anagrams = collections.defaultdict(list)
+
+        for s in strs:
+            sorted_s = "".join(sorted(s))
+            print(sorted_s)
+            grouped_anagrams[sorted_s].append(s)
+        return list(grouped_anagrams.values())
 
 
-strs = ["", ""]
+strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
 s = Solution()
 print(s.groupAnagrams(strs))
