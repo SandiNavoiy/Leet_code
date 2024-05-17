@@ -1,6 +1,6 @@
 class Solution:
     def searchMatrix(self, matrix: list[list[int]], target: int) -> bool:
-        ''''''
+        '''Двоичный поиск в матрице'''
         start = 0
         fin  = len(matrix)-1
         if fin+1 == 1:
