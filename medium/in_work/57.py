@@ -3,27 +3,18 @@ class Solution:
         self, intervals: list[list[int]], newInterval: list[int]
     ) -> list[list[int]]:
         """"""
-        new_1 = []
-        new_2 = []
-        for i in intervals:
-            if (
-                i[0] <= newInterval[0] <= i[1]
-                or i[0] <= newInterval[1] <= i[1]
-                or (i[0] <= newInterval[0] and i[1] >= newInterval[1])
-                or (i[0] >= newInterval[0] and i[1] <= newInterval[1])
-            ):
-                new_1.append(i)
+        rez = []
+        x = sorted(intervals + [newInterval])
+        for i, j in x:
+            if rez and i <= rez[-1][-1]:
+                rez[-1][-1] = max(rez[-1][-1], j)
             else:
-                new_2.append(i)
-        x = [new_1[0][0], new_1[-1][-1]]
+                rez.append([i, j])
 
-        new_2.extend([x])
-        new_2.sort()
-
-        return new_2
+        return rez
 
 
 intervals = [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]]
-newInterval = [4, 8]
+newInterval = [2, 5]
 s = Solution()
 print(s.insert(intervals, newInterval))
