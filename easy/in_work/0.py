@@ -45,10 +45,10 @@ class Array:
             self.data.pop()
 
 
-def __str__(self):
-    """
-    Возвращает все элементы массива в виде строки.
-    """
-    return "[" + ", ".join(map(str, self.data[:self.length])) + "]"
+    def __str__(self):
+        """
+        Возвращает все элементы массива в виде строки.
+        """
+        return "[" + ", ".join(map(str, self.data[:self.length])) + "]"
 
 
