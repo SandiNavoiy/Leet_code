@@ -9,6 +9,8 @@ class Solution:
                 else:
                     break
         return rez
+
+
 s = "abcabcbb"
 sol = Solution()
 print(sol.lengthOfLongestSubstring(s))

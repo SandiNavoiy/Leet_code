@@ -1,14 +1,16 @@
 from collections import Counter
 
+
 class Solution:
     def findDuplicate(self, nums: list[int]) -> int:
-        ''''''
+        """"""
         x = dict(Counter(nums))
-        new = sorted(x.items(), key=lambda i:i[1],reverse=True)
+        new = sorted(x.items(), key=lambda i: i[1], reverse=True)
 
         return new[0][0]
 
-nums = [1,3,4,2,2,4,4,4]
+
+nums = [1, 3, 4, 2, 2, 4, 4, 4]
 s = Solution()
 print(s.findDuplicate(nums))
 

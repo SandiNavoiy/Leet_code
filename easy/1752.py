@@ -3,8 +3,7 @@ from collections import deque
 
 class Solution:
     def check(self, nums: list[int]) -> bool:
-        ''''''
-
+        """"""
 
         new_sort = sorted(nums)
         arr = deque(nums)
@@ -15,6 +14,6 @@ class Solution:
         return False
 
 
-nums = [6,10,6]
+nums = [6, 10, 6]
 s = Solution()
 print(s.check(nums))

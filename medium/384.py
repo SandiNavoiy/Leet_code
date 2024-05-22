@@ -3,7 +3,6 @@ import random
 
 
 class Solution:
-
     def __init__(self, nums: list[int]):
         self.nums = nums
 
@@ -14,6 +13,7 @@ class Solution:
         x = deepcopy(self.nums)
         random.shuffle(x)
         return x
+
 
 # Your Solution object will be instantiated and called as such:
 nums = [1, 2, 3]

@@ -4,17 +4,17 @@ class Solution:
         if dividend == divisor:
             return 1
         if dividend > 0 and divisor > 0:
-            flag  = 1
+            flag = 1
         elif dividend > 0 and divisor < 0:
             flag = 0
         elif dividend < 0 and divisor > 0:
             flag = 0
         elif dividend < 0 and divisor < 0:
             flag = 1
-        elif dividend == 0 :
+        elif dividend == 0:
             flag = 1
 
-        dividend=  abs(dividend)
+        dividend = abs(dividend)
         divisor = abs(divisor)
         rez = 0
         while dividend > divisor:
