@@ -1,54 +1,13 @@
-class Array:
+array1 = [3, 4, 7, 8]
+array2 = [1, 5, 9]
+
+def merge(array1, array2):
     """
-    Линейный статический массив.
+    Функция слияния двух отсортированных массивов в один.
+    array1 и array2 - массивы представленные python-списками.
     """
-
-    def __init__(self, size):
-        # Данные массива, изначально массив пустой и все его элементы заполнены None.
-        # То есть сразу выделяем массив фиксированного объема.
-        self.data = [None] * size
-
-        # Длина заполненного массива.
-        # По умолчанию 0, так как массив пустой.
-        self.length = 0
-
-        # Полный размер массива.
-        self.size = size
-
-    def append(self, value):
-        """
-        Добавление нового элемента в конец линейного массива.
-        Время работы O(1).
-        """
-        if self.length == self.size:
-            raise OverflowError
-        self.data[self.length] = value
-        self.length += 1
-
-    def remove(self, value):
-        """
-        Удаляет все элементы со значением value.
-        Время работы O(N).
-        """
-        while value in self.data:
-            v = self.data.index(value)
-            self.data.pop(v)
-            self.length -= 1
-            self.data.append(None)
-
-    def __str__(self):
-        """
-        Возвращает все элементы массива в виде строки.
-        """
-        return "[" + ", ".join(map(str, self.data[:self.length])) + "]"
-array = Array(5)
-array.append(6)
-array.append(2)
-array.append(1)
-array.append(2)
-array.append(9)
+    # Добавьте ваш код тут.
+    return array1 + array2
+array = merge(array1, array2)
 print(array)
-#[6, 2, 1, 2, 9]
-array.remove(2)
-#[6, 1, 9]
-print(array)
+[1, 3, 4, 5, 7, 8, 9]
