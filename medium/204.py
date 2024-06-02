@@ -17,7 +17,6 @@ class Solution:
         return len(rez)
 
 
-
 n = 499979
 s = Solution()
 print(s.countPrimes(n))

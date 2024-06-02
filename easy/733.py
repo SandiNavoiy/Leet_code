@@ -1,5 +1,7 @@
 class Solution:
-    def floodFill(self, image: list[list[int]], sr: int, sc: int, newColor: int) -> list[list[int]]:
+    def floodFill(
+        self, image: list[list[int]], sr: int, sc: int, newColor: int
+    ) -> list[list[int]]:
         m = len(image)
         n = len(image[0])
         originalColor = image[sr][sc]
