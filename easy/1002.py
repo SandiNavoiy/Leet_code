@@ -1,14 +1,21 @@
+from collections import Counter
+
+
 class Solution:
     def commonChars(self, words: list[str]) -> list[str]:
         """Найдите общих персонажей"""
-        if not words:
-            return []
+        d = Counter(words[0])
+        rez = []
 
-        myset = set(words[0])
-        for word in words[1:]:
-            myset = myset.intersection(set(word))
+        for i in words:
+            temp = Counter(i)
+            d  = d & temp
+        for k, v in d.items():
+            rez = rez + [k] *v
 
-        return list(myset)
+        return rez
+
+
 
 
 word = ["bella", "label", "roller"]
