@@ -1,35 +1,38 @@
-array1 = [3, 4, 7, 8]
-array2 = [1, 5, 9]
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next_node = None
+
+    def __str__(self):
+        return str(self.value)
 
 
-def merge(array1, array2):
-    """
-    Функция слияния двух отсортированных массивов в один.
-    array1 и array2 - массивы представленные python-списками.
-    """
-    # Добавьте ваш код тут.
-    array = []
+class Stack:
+    def __init__(self):
+        self.top = Node(None)
 
-    arr1 = len(array1)
-    arr2 = len(array2)
-    i = 0
-    j = 0
+    def pop(self):
+        """
+        Извлекает элемент из стека.
+        """
+        # Добавьте ваш код тут.
 
-    while i < arr1 and j < arr2:
-        if array1[i] < array2[j]:
-            array.append(array1[i])
-            i += 1
-        else:
-            array.append(array2[j])
-            j += 1
-
-    if i < arr1:
-        array.extend(array1[i:])
-    if j < arr2:
-        array.extend(array2[j:])
-    return array
+    def push(self, value):
+        """
+        Добавляет элемент со значением value в стек.
+        """
+        next_node = Node(value)
 
 
-array = merge(array1, array2)
-print(array)
-[1, 3, 4, 5, 7, 8, 9]
+stack = Stack()
+stack.push(12)
+stack.push(7)
+stack.push(6)
+print(stack.pop())
+# 6
+print(stack.pop())
+# 7
+print(stack.pop())
+# 12
+print(stack.pop())
+None
