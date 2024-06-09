@@ -34,7 +34,7 @@ class Stack(Array):
         Извлекает элемент из стека справа.
         """
         # Добавьте ваш код тут
-        if self.ritr < 0:
+        if self.ritr <= 0:
             return None
         x = self.data[self.size - self.ritr -1]
         self.data[self.size - self.ritr -1] = None
