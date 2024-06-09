@@ -4,11 +4,12 @@ class Solution:
         sum_scoks = 0
         min_price = prices[0] + fee
         for i in prices:
-            if i + fee < min_price:
-                min_price = i +fee
-            elif i + fee > min_price:
+
+            if i + fee > min_price:
                 sum_scoks = sum_scoks + i - min_price
                 min_price = i
+            elif i + fee < min_price:
+                min_price = i + fee
 
         return sum_scoks
 
