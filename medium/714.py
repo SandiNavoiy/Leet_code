@@ -5,7 +5,7 @@ class Solution:
         min_price = prices[0] + fee
         for i in prices:
 
-            if i + fee > min_price:
+            if i > min_price:
                 sum_scoks = sum_scoks + i - min_price
                 min_price = i
             elif i + fee < min_price:
@@ -13,7 +13,7 @@ class Solution:
 
         return sum_scoks
 
-prices = [1,3,2,8,4,9]
-fee = 2
+prices = [9,8,7,1,2]
+fee = 3
 s = Solution()
 print(s.maxProfit(prices, fee))
