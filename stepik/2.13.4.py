@@ -8,7 +8,7 @@ class Array:
         """
         Возвращает все элементы массива в виде строки.
         """
-        return "[" + ", ".join(map(str, self.data[:self.length])) + "]"
+        return "[" + ", ".join(map(str, self.data[: self.length])) + "]"
 
 
 class Stack(Array):
@@ -35,7 +35,6 @@ class Stack(Array):
 
             return value
 
-
     def push(self, value):
         """
         Добавление нового элемента в стек.
@@ -53,7 +52,6 @@ class Stack(Array):
         # Добавляем новый элемент.
         self.data[self.top] = value
 
-
     def clear(self):
         """
         Очищает стек.
@@ -63,14 +61,12 @@ class Stack(Array):
         self.top = -1
         self.length = 0
 
-
     def peek(self):
         """
         Возвращает значение верхнего элемента без его извлечения из стека.
         """
         # Добавьте ваш код тут.
         return self.data[self.top]
-
 
     def count(self):
         """
