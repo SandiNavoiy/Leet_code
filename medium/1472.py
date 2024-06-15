@@ -1,16 +1,14 @@
 class BrowserHistory:
-
     def __init__(self, homepage: str):
         self.links = [homepage]
         self.ind = 0
         self.size = 1
 
     def visit(self, url: str) -> None:
-        if self.ind + 1  >=  len(self.links):
+        if self.ind + 1 >= len(self.links):
             self.links.append(url)
         else:
             self.links[self.ind + 1] = url
-
 
         self.ind += 1
         self.size = self.ind + 1
@@ -22,6 +20,7 @@ class BrowserHistory:
     def forward(self, steps: int) -> str:
         self.ind = min(self.size - 1, self.ind + steps)
         return self.links[self.ind]
+
 
 # Your BrowserHistory object will be instantiated and called as such:
 homepage = "1"

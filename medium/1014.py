@@ -11,6 +11,6 @@ class Solution:
         return maxVal
 
 
-values = [8,1,5,2,6]
+values = [8, 1, 5, 2, 6]
 s = Solution()
 print(s.maxScoreSightseeingPair(values))

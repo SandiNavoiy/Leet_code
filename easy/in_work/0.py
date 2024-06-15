@@ -9,7 +9,7 @@ class Array:
         """
         Возвращает все элементы массива в виде строки.
         """
-        return "[" + ", ".join(map(str, self.data[:self.length])) + "]"
+        return "[" + ", ".join(map(str, self.data[: self.length])) + "]"
 
 
 class Stack(Array):
@@ -36,8 +36,8 @@ class Stack(Array):
         # Добавьте ваш код тут
         if self.ritr <= 0:
             return None
-        x = self.data[self.size - self.ritr -1]
-        self.data[self.size - self.ritr -1] = None
+        x = self.data[self.size - self.ritr - 1]
+        self.data[self.size - self.ritr - 1] = None
         self.ritr = self.ritr - 1
         return x
 
@@ -46,7 +46,7 @@ class Stack(Array):
         Добавляет элемент со значением value в стек слева.
         """
         # Добавьте ваш код тут
-        if self.length  + self.ritr < self.size:
+        if self.length + self.ritr < self.size:
             self.data[self.length] = value
             self.length = self.length + 1
         else:
@@ -57,8 +57,8 @@ class Stack(Array):
         Добавляет элемент со значением value в стек справа.
         """
         # Добавьте ваш код тут
-        if self.length  + self.ritr < self.size:
-            self.data[self.size - self.ritr -1] = value
+        if self.length + self.ritr < self.size:
+            self.data[self.size - self.ritr - 1] = value
             self.ritr = self.ritr + 1
         else:
             raise OverflowError
@@ -77,7 +77,8 @@ class Stack(Array):
         Возвращает все элементы массива в виде строки.
         Используем size, так как массив теперь заполняется с двух сторон.
         """
-        return "[" + ", ".join(map(str, self.data[:self.size])) + "]"
+        return "[" + ", ".join(map(str, self.data[: self.size])) + "]"
+
 
 stack = Stack(6)
 stack.push_left(7)
@@ -88,11 +89,11 @@ stack.push_left(11)
 stack.push_right(8)
 print(stack)
 print(stack.pop_left())
-#11
+# 11
 print(stack.pop_left())
-#6
+# 6
 print(stack.pop_left())
-#7
+# 7
 
 print(stack.pop_left())
-#2
+# 2

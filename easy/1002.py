@@ -9,13 +9,11 @@ class Solution:
 
         for i in words:
             temp = Counter(i)
-            d  = d & temp
+            d = d & temp
         for k, v in d.items():
-            rez = rez + [k] *v
+            rez = rez + [k] * v
 
         return rez
-
-
 
 
 word = ["bella", "label", "roller"]

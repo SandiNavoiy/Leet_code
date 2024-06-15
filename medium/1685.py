@@ -1,6 +1,6 @@
 class Solution:
     def getSumAbsoluteDifferences(self, nums: list[int]) -> list[int]:
-        ''''''
+        """"""
         n = len(nums)
         ss = sum(nums)
         new = [0 for i in range(n)]
@@ -13,6 +13,7 @@ class Solution:
 
         return new
 
-nums = [2,3,5]
+
+nums = [2, 3, 5]
 s = Solution()
 print(s.getSumAbsoluteDifferences(nums))

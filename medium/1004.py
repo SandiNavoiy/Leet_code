@@ -1,6 +1,6 @@
 class Solution:
     def longestOnes(self, nums: list[int], k: int) -> int:
-        ''''''
+        """"""
 
         left = 0
         max_length = 0
@@ -16,9 +16,10 @@ class Solution:
 
             max_length = max(max_length, right - left + 1)
 
-
         return max_length
-nums = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1]
+
+
+nums = [0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1]
 k = 3
 s = Solution()
 print(s.longestOnes(nums, k))

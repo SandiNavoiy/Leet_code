@@ -3,7 +3,7 @@ from collections import Counter
 
 class Solution:
     def numSplits(self, s: str) -> int:
-        ''''''
+        """"""
         right_count = Counter(s)
         left_count = Counter()
         num_splits = 0
@@ -24,7 +24,6 @@ class Solution:
                 num_splits += 1
 
         return num_splits
-
 
 
 s = "aacaba"
