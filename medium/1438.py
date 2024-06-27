@@ -11,18 +11,17 @@ class Solution:
             if nums[right] < min_m:
                 min_m = nums[right]
 
-
             while max_m - min_m > limit:
-
                 left += 1
-                min_m = min(nums[left:right + 1])
-                max_m = max(nums[left:right + 1])
+                min_m = min(nums[left : right + 1])
+                max_m = max(nums[left : right + 1])
 
             lll = max(lll, right - left + 1)
 
         return lll
 
-nums = [10,1,2,4,7,2]
+
+nums = [10, 1, 2, 4, 7, 2]
 limit = 5
 s = Solution()
 print(s.longestSubarray(nums, limit))

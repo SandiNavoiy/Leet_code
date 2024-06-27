@@ -1,6 +1,5 @@
 class Solution:
     def tictactoe(self, moves: list[list[int]]) -> str:
-
         scores = [0] * 8
         for i, (row, col) in enumerate(moves):
             if i % 2 == 0:
@@ -15,10 +14,12 @@ class Solution:
                 scores[7] += x
         for score in scores:
             if score == 3:
-                return 'A'
+                return "A"
             elif score == -3:
-                return 'B'
-        return 'Draw' if len(moves) == 9 else 'Pending'
-moves = [[0,0],[2,0],[1,1],[2,1],[2,2]]
+                return "B"
+        return "Draw" if len(moves) == 9 else "Pending"
+
+
+moves = [[0, 0], [2, 0], [1, 1], [2, 1], [2, 2]]
 s = Solution()
 print(s.tictactoe(moves))

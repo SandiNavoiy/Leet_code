@@ -1,15 +1,12 @@
 class Solution:
     def numberOfChild(self, n: int, k: int) -> int:
-        ''''''
-        col = k // (n- 1)
-        ost = k % (n- 1)
+        """"""
+        col = k // (n - 1)
+        ost = k % (n - 1)
         if col % 2 == 0:
             return ost
         else:
-            return (n- 1) -  ost
-
-
-
+            return (n - 1) - ost
 
 
 n = 5

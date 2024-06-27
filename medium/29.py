@@ -2,7 +2,7 @@ class Solution:
     def divide(self, dividend: int, divisor: int) -> int:
         # Constants for the 32-bit integer range
         MAX_INT = 2**31 - 1
-        MIN_INT = -2**31
+        MIN_INT = -(2**31)
 
         # Handle overflow case
         if dividend == MIN_INT and divisor == -1:
