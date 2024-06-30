@@ -5,7 +5,7 @@ class Node:
         self.prev_node = None
 
     def __str__(self):
-        return self.value
+        return str(self.value)
 
 
 class Queue:
@@ -14,29 +14,35 @@ class Queue:
     """
 
     def __init__(self):
-        self.top = Node(None)
+        self.top = None
+        self.tail = None
 
     def enqueue(self, value):
         """
         Добавляет элемент со значением value в очередь.
         """
-        cur = self.top
-        if cur.next_node is None:
-            cur = Node(value)
-            self.top.next_node = cur
-            cur.prev_node = self.top
-            return
-        while cur.next_node is not None:
-            cur = cur.next_node
-        cur = Node(value)
-        self.top.next_node = cur
-        cur.prev_node = self.top
+        new_node = Node(value)
+        if self.tail is None:  # Если очередь пуста
+            self.top = new_node
+            self.tail = new_node
+        else:
+            self.tail.next_node = new_node
+            new_node.prev_node = self.tail
+            self.tail = new_node
 
     def dequeue(self):
         """
         Извлекает элемент из очереди.
         """
-        # Добавьте ваш код тут
+        if self.top is None:  # Если очередь пуста
+            return None
+        dequeued_value = self.top.value
+        self.top = self.top.next_node
+        if self.top is not None:
+            self.top.prev_node = None
+        else:
+            self.tail = None
+        return dequeued_value
 
 
 queue = Queue()
