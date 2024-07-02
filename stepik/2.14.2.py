@@ -5,7 +5,7 @@ class Node:
         self.prev_node = None
 
     def __str__(self):
-        return self.value
+        return str(self.value)
 
 
 class Queue:
@@ -17,12 +17,15 @@ class Queue:
         self.top = Node(None)
         self.first = None
         self.size = size
+        self.count_nodes = 0  # Счетчик элементов в очереди
 
     def enqueue(self, value):
         """
         Добавляет элемент со значением value в очередь.
         """
         new_node = Node(value)
+        if self.count_nodes >= self.size:
+            raise OverflowError("Очередь переполнена")
 
         # Вставялем элемент в начало.
 
@@ -41,6 +44,8 @@ class Queue:
         if not self.first:
             self.first = new_node
 
+        self.count_nodes += 1  # Увеличиваем счетчик элементов
+
     def dequeue(self):
         """
         Извлекает элемент из очереди.
@@ -54,12 +59,15 @@ class Queue:
             self.first = self.first.prev_node
 
             # Удаляем последний элемент.
-            self.first.next_node = None
+            if self.first:
+                self.first.next_node = None
 
             # Проверяем, не ссылается ли first на top.
             # Если ссылается, то сбрасываем first.
-            if self.first.value is None:
+            if self.first == self.top:
                 self.first = None
+
+            self.count_nodes -= 1  # Уменьшаем счетчик элементов
 
             return value
 
@@ -69,19 +77,23 @@ class Queue:
         """
         Возвращает количество элементов в очереди.
         """
-        # Добавьте ваш код тут.
+        return self.count_nodes
 
     def peek(self):
         """
         Возвращает значение первого элемента очереди без его извлечения.
         """
-        # Добавьте ваш код тут.
+        if self.first:
+            return self.first.value
+        return None
 
     def clear(self):
         """
         Очищает очередь.
         """
-        # Добавьте ваш код тут.
+        self.top.next_node = None
+        self.first = None
+        self.count_nodes = 0
 
 
 queue = Queue(3)
