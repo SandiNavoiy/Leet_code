@@ -29,9 +29,6 @@ class Solution:
                 break
             cur = cur.next
             i = i + 1
-
-
-
         return head
 
 
