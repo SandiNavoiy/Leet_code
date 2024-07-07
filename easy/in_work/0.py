@@ -1,7 +1,21 @@
-def info_kwargs(**kwargs):
-    sorted_keys = sorted(kwargs.keys(), reverse=False)
-    for key in sorted_keys:
-        print(f"{key} = {kwargs[key]}")
+def bubblesort(array):
+    """
+    Алгоритм пузырьковой сортировки массива в прямом порядке.
+    """
+
+    # Модифицируйте алгоритм.
+    n = 1
+    is_sorted = False
+    while not is_sorted:
+        is_sorted = True
+
+        for i in range(len(array) - n):
+            if array[i] < array[i + 1]:
+                array[i], array[i + 1] = array[i + 1], array[i]
+                is_sorted = False
+
+        n += 1
+    return array
 
 
-info_kwargs(first_name="John", last_name="Doe", age=33)
+print(bubblesort([1,5,9,7,2,7,0,4,3]))
