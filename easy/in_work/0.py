@@ -1,10 +1,21 @@
-lines = [(5, 6), (5, 4), (1, 0), (0, -1), (1, 2), (2, 1)]
+def double_it(func):
+    def wrapper(*args, **kwargs):
+        return func(*args, **kwargs) * 2
+
+    return wrapper
 
 
-def get_sort_lines(l):
-    l = sorted(l, key=lambda x: (abs(x[1] - x[0]), x[0], x[1]))
-    return l
+def increment(func):
+    def wrapper(*args, **kwargs):
+        return func(*args, **kwargs) + 1
+
+    return wrapper
 
 
-print(get_sort_lines(lines))
-# [(-1, -2), (1, 0), (2, 3), (5, 4)]
+def add(num1, num2):
+    return num1 + num2
+
+
+add = double_it(increment(add))
+
+print(add(5, 7))
