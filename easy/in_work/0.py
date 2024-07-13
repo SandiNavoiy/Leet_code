@@ -1,21 +1,24 @@
-def double_it(func):
-    def wrapper(*args, **kwargs):
-        return func(*args, **kwargs) * 2
-
-    return wrapper
+from functools import wraps
 
 
-def increment(func):
-    def wrapper(*args, **kwargs):
-        return func(*args, **kwargs) + 1
+def upper(func):
+    @wraps(func)
+    def inner(*args, **kwargs):
+        """
+        Внутренняя функция декоратора
+        """
+        return func(*args, **kwargs).upper()
 
-    return wrapper
+    return inner
 
 
-def add(num1, num2):
-    return num1 + num2
+@upper
+def concatenate(*args):
+    """
+    Возвращает конкатенацию переданных строк
+    """
+    return ", ".join(args)
 
 
-add = double_it(increment(add))
-
-print(add(5, 7))
+print(concatenate.__name__)
+print(concatenate.__doc__.strip())
