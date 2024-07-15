@@ -1,24 +1,22 @@
-from functools import wraps
+def limit_query(param):
+
+    def dec(f):
+        limit = 0
+        def wrapper(*args, **kwargs):
+            if limit <= 3:
+                limit = limit + 1
+                return f(*args, **kwargs)
+        return wrapper
+    return dec
 
 
-def upper(func):
-    @wraps(func)
-    def inner(*args, **kwargs):
-        """
-        Внутренняя функция декоратора
-        """
-        return func(*args, **kwargs).upper()
 
-    return inner
+@limit_query(3)
+def add(a: int, b: int):
+    return a + b
 
-
-@upper
-def concatenate(*args):
-    """
-    Возвращает конкатенацию переданных строк
-    """
-    return ", ".join(args)
-
-
-print(concatenate.__name__)
-print(concatenate.__doc__.strip())
+print(add(4, 5))
+print(add(5, 8))
+print(add(9, 43))
+print(add(10, 33))
+print(add.__name__)
