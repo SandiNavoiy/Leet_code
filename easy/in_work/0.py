@@ -1,22 +1,11 @@
-def limit_query(param):
+name = input()
+coust = input()
+we = input()
+cash = input()
+y = int(int(cash) - int(we) * int(coust))
 
-    def dec(f):
-        limit = 0
-        def wrapper(*args, **kwargs):
-            if limit <= 3:
-                limit = limit + 1
-                return f(*args, **kwargs)
-        return wrapper
-    return dec
-
-
-
-@limit_query(3)
-def add(a: int, b: int):
-    return a + b
-
-print(add(4, 5))
-print(add(5, 8))
-print(add(9, 43))
-print(add(10, 33))
-print(add.__name__)
+print("Чек")
+print(f"<{name}> - <{we}>кг - <{coust}>руб/кг")
+print(f"Итого: <{int(coust) *int(we)}>руб")
+print(f"Внесено: <{cash}>руб")
+print(f"Сдача: <{y}>руб")
