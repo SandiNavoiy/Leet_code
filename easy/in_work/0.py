@@ -1,11 +1,13 @@
-name = input()
-coust = input()
-we = input()
-cash = input()
-y = int(int(cash) - int(we) * int(coust))
+# Получаем значение, которое будем искать
+val = int(input())
 
-print("Чек")
-print(f"<{name}> - <{we}>кг - <{coust}>руб/кг")
-print(f"Итого: <{int(coust) *int(we)}>руб")
-print(f"Внесено: <{cash}>руб")
-print(f"Сдача: <{y}>руб")
+# Получаем список элементов, в которых будем искать
+values = list(map(int, input().split(" ")))
+
+
+# Запуск функции с выводом ответа
+def interpolation_search(values, val):
+    pass
+
+
+print(interpolation_search(values, val))
