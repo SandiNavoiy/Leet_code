@@ -7,6 +7,7 @@ class Solution(object):
         """
 
         if len(set(s)) == len(set(t)) == len(set(zip(s, t))):
+            print(set(zip(s, t)))
             return True
         return False
 
