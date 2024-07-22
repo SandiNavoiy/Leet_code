@@ -1,26 +1,38 @@
-# Получаем значение, которое будем искать
-val = int(input())
+def gen_prime(n):
+    """
+    Функция для генерации простых чисел в диапазон [2, N]
+    используя решето Эратосфена.
+    """
+    # Создаем булев список длиной N.
+    # True - значит число простое, False - составное.
+    l = [True] * (n + 1)
 
-# Получаем список элементов, в которых будем искать
-values = list(map(int, input().split()))
+    # Результирующий список простых чисел.
+    result = []
 
+    # Начальное значение
+    p = 2
 
-# Запуск функции с выводом ответа
-def search(arr, val):
-    minn = 0
-    maxx = len(arr) - 1
-    result = -1
-    while minn <= maxx:
-        mid = (maxx + minn) // 2
-        if val < arr[mid]:
-            maxx = mid - 1
-        elif val > arr[mid]:
-            minn = mid + 1
-        else:
-            result = mid
-            minn = mid + 1
+    # Начинаем перебирать все числа.
+    while p <= n:
+
+        if l[p]:
+            # Добавляеем очередное простое число.
+            result.append(p)
+
+            # Проход вперед для отметки чисел кратных p.
+            factor = 2  # Множитель
+            p_mult = p * factor  # Число кратное p.
+
+            # Проходим по всем кратным числам и отмечаем их как False.
+            while p_mult <= n:  # Это условие в уроке показано с ошибкой, должно быть <= n
+                l[p_mult] = False
+                factor += 1
+                p_mult = p * factor
+
+        p += 1
 
     return result
+x  = int(input())
 
-
-print(search(values, val))
+print(' '.join(str(el) for el in gen_prime(x)))
