@@ -1,38 +1,17 @@
-def gen_prime(n):
-    """
-    Функция для генерации простых чисел в диапазон [2, N]
-    используя решето Эратосфена.
-    """
-    # Создаем булев список длиной N.
-    # True - значит число простое, False - составное.
-    l = [True] * (n + 1)
+# Названия дней недели
+days_of_week = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+]
 
-    # Результирующий список простых чисел.
-    result = []
+# Создаем генераторное выражение
+days = ((day_number, days_of_week[(day_number - 1) % 7]) for day_number in range(1, 78))
 
-    # Начальное значение
-    p = 2
-
-    # Начинаем перебирать все числа.
-    while p <= n:
-
-        if l[p]:
-            # Добавляеем очередное простое число.
-            result.append(p)
-
-            # Проход вперед для отметки чисел кратных p.
-            factor = 2  # Множитель
-            p_mult = p * factor  # Число кратное p.
-
-            # Проходим по всем кратным числам и отмечаем их как False.
-            while p_mult <= n:  # Это условие в уроке показано с ошибкой, должно быть <= n
-                l[p_mult] = False
-                factor += 1
-                p_mult = p * factor
-
-        p += 1
-
-    return result
-x  = int(input())
-
-print(' '.join(str(el) for el in gen_prime(x)))
+# Печатаем первые 77 дней
+for day in days:
+    print(day)
