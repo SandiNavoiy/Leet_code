@@ -1,38 +1,15 @@
-def gen_prime(n):
-    """
-    Функция для генерации простых чисел в диапазон [2, N]
-    используя решето Эратосфена.
-    """
-    # Создаем булев список длиной N.
-    # True - значит число простое, False - составное.
-    l = [True] * (n + 1)
+count = 1
 
-    # Результирующий список простых чисел.
-    result = []
 
-    # Начальное значение
-    p = 2
+def gen_arithmetic_progression(param, param1):
+    while True:
+        yield param
+        param = param + param1
 
-    # Начинаем перебирать все числа.
-    while p <= n:
 
-        if l[p]:
-            # Добавляеем очередное простое число.
-            result.append(p)
 
-            # Проход вперед для отметки чисел кратных p.
-            factor = 2  # Множитель
-            p_mult = p * factor  # Число кратное p.
-
-            # Проходим по всем кратным числам и отмечаем их как False.
-            while p_mult <= n:  # Это условие в уроке показано с ошибкой, должно быть <= n
-                l[p_mult] = False
-                factor += 1
-                p_mult = p * factor
-
-        p += 1
-
-    return result
-x  = int(input())
-
-print(' '.join(str(el) for el in gen_prime(x)))
+for value in gen_arithmetic_progression(5, 7):
+    print(value)
+    count += 1
+    if count > 5:
+        break
