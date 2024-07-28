@@ -1,15 +1,10 @@
-count = 1
+def digital_root(param):
+    if len(str(param)) == 1:
+        return param
+    else:
+        return digital_root
 
 
-def gen_arithmetic_progression(param, param1):
-    while True:
-        yield param
-        param = param + param1
-
-
-
-for value in gen_arithmetic_progression(5, 7):
-    print(value)
-    count += 1
-    if count > 5:
-        break
+root = digital_root(9999999)
+print(root)
+9
