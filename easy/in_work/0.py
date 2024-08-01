@@ -1,10 +1,7 @@
-def digital_root(param):
-    if len(str(param)) == 1:
-        return param
-    else:
-        return digital_root
+def speller(param):
+    if len(param) > 0:
+        print(param[-1])
+        speller(param[:-1])
 
 
-root = digital_root(9999999)
-print(root)
-9
+speller("Artem")
