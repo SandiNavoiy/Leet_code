@@ -3,7 +3,6 @@ class Solution:
         direction, row = "positive", -1
         rows = [""] * numRows
 
-
         for char in s:
             if direction == "positive":
                 row += 1
