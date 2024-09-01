@@ -1,11 +1,12 @@
-def is_member(param, lst):
-    if len(lst) >0:
-        if param == lst[0]:
-            return True
+def reversed_recursive(lst):
+    t = []
+    for i in lst:
+        if isinstance(i, list):
+            t.append(reversed_recursive(i))
         else:
-            return is_member(param, lst[1:])
+            t.append(i)
 
-    return False
+    return list(reversed(t))
 
 
-print(is_member("e", ['a', 'e', 'i', 'o', 'u']))
+print(reversed_recursive([[1, 2, 3], [4, 5], [6, 7, 8]]))
