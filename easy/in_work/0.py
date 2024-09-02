@@ -1,11 +1,15 @@
-def is_member(param, lst):
-    if len(lst) >0:
-        if param == lst[0]:
-            return True
+def flatten_dict(lst):
+    t = {}
+    for k,v in lst.items():
+        if isinstance(v, dict):
+            flat = flatten_dict(v)
+            for sub_k, sub_v in flat.items():
+                t[k + '_' + sub_k] = sub_v
         else:
-            return is_member(param, lst[1:])
+            t[k] = v
+        print(t)
+    return t
 
-    return False
 
 
-print(is_member("e", ['a', 'e', 'i', 'o', 'u']))
+print(flatten_dict({'Q': {'w': {'E': {'r': {'T': {'y': 123}}}}}}))
