@@ -1,5 +1,4 @@
 class NeighborSum:
-
     def __init__(self, grid: List[List[int]]):
         self.grid = grid
         self.l = len(grid)
@@ -37,6 +36,8 @@ class NeighborSum:
         if row - 1 != -1 and col - 1 != -1:
             s += self.grid[row - 1][col - 1]
         return s
+
+
 # Your NeighborSum object will be instantiated and called as such:
 # obj = NeighborSum(grid)
 # param_1 = obj.adjacentSum(value)
