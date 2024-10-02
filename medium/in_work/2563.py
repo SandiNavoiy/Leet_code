@@ -1,18 +1,25 @@
 class Solution:
     def countFairPairs(self, nums: list[int], lower: int, upper: int) -> int:
         """"""
-        eee = []
-        ans = 0
         nums.sort()
-        for i in range(len(nums)):
-            for j in range(i + 1, len(nums)):
-                if lower <= nums[i] + nums[j] <= upper:
-                    ans = ans + 1
-                    eee.append([i, j])
-                else:
-                    continue
-
-        return ans
+        l = 0
+        r = len(nums) - 1
+        rez = 0
+        while l < r:
+            if nums[l] + nums[r] > upper:
+                r = r - 1
+            else:
+                rez = rez + r - l
+                l += 1
+        l = 0
+        r = len(nums) - 1
+        while l < r:
+            if nums[l] + nums[r] >= lower:
+                r = r - 1
+            else:
+                rez = rez - (r - l)
+                l += 1
+        return rez
 
 
 nums = [0, 0, 0, 0, 0, 0]
