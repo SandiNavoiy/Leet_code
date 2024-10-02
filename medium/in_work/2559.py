@@ -3,15 +3,16 @@ class Solution:
         """"""
         glass = ("a", "e", "i", "o", "u")
         rez = []
-        for i in words:
-            if i[0] in glass and i[-1] in glass:
-                rez.append(1)
-            else:
-                rez.append(0)
+        rez = [1 if word[0] in glass and word[-1] in glass else 0 for word in words]
+        # Вычисляем префиксные суммы
+        prefix_sum = [0] * (len(rez) + 1)
+        for i in range(len(rez)):
+            prefix_sum[i + 1] = prefix_sum[i] + rez[i]
 
         ans = []
-        for i in queries:
-            ans.append(rez[i[0] : i[1] + 1].count(1))
+        for q in queries:
+            ans.append(prefix_sum[q[1] + 1] - prefix_sum[q[0]])
+
         return ans
 
 
