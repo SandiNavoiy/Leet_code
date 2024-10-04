@@ -8,8 +8,6 @@ class Solution:
         low = [i for i in nums if i < med]
         high = [i for i in nums if i >= med]
 
-
-
         return high
 
 
