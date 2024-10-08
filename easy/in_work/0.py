@@ -1,15 +1,11 @@
-def test(f):
-    def www(*args):
-        return f(*args) * 2
-    return www
+def replace(text, old, new=""):
+    ee = ""
+    for i in text:
+        if i == old:
+            ee += new
+        else:
+            ee += i
+    return ee
 
 
-@test
-def gggg(x):
-    return x * 2
-
-
-
-t= 2
-
-print(gggg(t))
+print(replace("Bella Ciao", "a"))
