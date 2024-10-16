@@ -1,26 +1,52 @@
-class Student:
-    def __init__(self, name, age, branch):
-        self.__name = name
-        self.__age = age
-        self.__branch = branch
-
-    def __display_details(self):
-
-        print(f"Имя: {self.__name}")
-        print(f"Возраст: {self.__age}")
-        print(f"Направление: {self.__branch}")
-
-    def access_private_method(self):
-        self.__display_details()
+# Напишите определение класса UserMail
 
 
-adam = Student("Adam Smith", 25, "Information Technology")
-piter = Student("Piter Parker", 34, "Information Security")
+# Ниже код для проверки методов класса UserMail
 
-adam.access_private_method()
-assert piter._Student__age == 34, 'Где приватный атрибут __age?'
-assert piter._Student__branch == "Information Security", 'Где приватный атрибут __branch?'
-assert piter._Student__name == "Piter Parker", 'Где приватный атрибут __name?'
-piter.access_private_method()
-adam._Student__display_details()
-piter._Student__display_details()
+
+class UserMail:
+    def __init__(self, login, email):
+        self.login = login
+        self.__email = email
+
+    def get_email(self):
+        return self.__email
+
+    def set_email(self, email):
+        if (
+            isinstance(email, str)
+            and email.count("@") == 1
+            and email.count(".") > 0
+            and email.index("@") < email.index(".")
+        ):
+            self.__email = email
+        else:
+            print(f"ErrorMail:{email}")
+
+    email = property(fget=get_email, fset=set_email)
+
+
+jim = UserMail("aka47", "hello@com.org")
+jim = UserMail("aka47", "hello@com.org")
+assert jim.login == "aka47"
+assert jim._UserMail__email == "hello@com.org"
+assert isinstance(jim, UserMail)
+assert isinstance(type(jim).email, property), "Вы не создали property email"
+
+jim.email = [1, 2, 3]  # печатает ErrorMail:[1, 2, 3]
+jim.email = "hello@@re.ee"  # печатает ErrorMail:hello@@re.ee
+jim.email = "hello@re.w3"
+assert jim.email == "hello@re.w3"
+
+k = UserMail("belosnezhka", "prince@wait.you")
+assert k.email == "prince@wait.you"
+assert k.login == "belosnezhka"
+assert isinstance(k, UserMail)
+
+k.email = {1, 2, 3}  # печатает ErrorMail:{1, 2, 3}
+k.email = "prince@still@.wait"  # печатает ErrorMail:prince@still@.wait
+k.email = "prince@stillwait"  # печатает ErrorMail:prince@stillwait
+k.email = "prince@still.wait"
+assert k.get_email() == "prince@still.wait"
+k.email = "pri.nce@stillwait"  # печатает ErrorMail:pri.nce@stillwait
+assert k.email == "prince@still.wait"
