@@ -1,52 +1,31 @@
-# Напишите определение класса UserMail
+class Date:
+    def __init__(self, date, month, year):
+        self.__date = f"{month}/{date}/{year}"
+
+    @property
+    def date(self):
+        return self.__date
+
+    @property
+    def usa_date(self):
+        return f"{self.month}-{self.day}-{self.year}"
 
 
-# Ниже код для проверки методов класса UserMail
-
-
-class UserMail:
-    def __init__(self, login, email):
-        self.login = login
-        self.__email = email
-
-    def get_email(self):
-        return self.__email
-
-    def set_email(self, email):
-        if (
-            isinstance(email, str)
-            and email.count("@") == 1
-            and email.count(".") > 0
-            and email.index("@") < email.index(".")
-        ):
-            self.__email = email
-        else:
-            print(f"ErrorMail:{email}")
-
-    email = property(fget=get_email, fset=set_email)
-
-
-jim = UserMail("aka47", "hello@com.org")
-jim = UserMail("aka47", "hello@com.org")
-assert jim.login == "aka47"
-assert jim._UserMail__email == "hello@com.org"
-assert isinstance(jim, UserMail)
-assert isinstance(type(jim).email, property), "Вы не создали property email"
-
-jim.email = [1, 2, 3]  # печатает ErrorMail:[1, 2, 3]
-jim.email = "hello@@re.ee"  # печатает ErrorMail:hello@@re.ee
-jim.email = "hello@re.w3"
-assert jim.email == "hello@re.w3"
-
-k = UserMail("belosnezhka", "prince@wait.you")
-assert k.email == "prince@wait.you"
-assert k.login == "belosnezhka"
-assert isinstance(k, UserMail)
-
-k.email = {1, 2, 3}  # печатает ErrorMail:{1, 2, 3}
-k.email = "prince@still@.wait"  # печатает ErrorMail:prince@still@.wait
-k.email = "prince@stillwait"  # печатает ErrorMail:prince@stillwait
-k.email = "prince@still.wait"
-assert k.get_email() == "prince@still.wait"
-k.email = "pri.nce@stillwait"  # печатает ErrorMail:pri.nce@stillwait
-assert k.email == "prince@still.wait"
+d1 = Date(5, 10, 2001)
+assert isinstance(d1, Date)
+assert d1.date == "05/10/2001"
+# assert d1.usa_date == "10-05-2001"
+# assert isinstance(type(d1).date, property), "Вы не создали property date"
+# print(d1.date, d1.usa_date)
+#
+# d2 = Date(15, 3, 999)
+# assert isinstance(d2, Date)
+# assert d2.date == "15/03/0999"
+# assert d2.usa_date == "03-15-0999"
+# assert isinstance(type(d2).date, property), "Вы не создали property date"
+# print(d2.date, d2.usa_date)
+#
+# d3 = Date(3, 5, 3)
+# assert d3.date == "03/05/0003"
+# assert d3.usa_date == "05-03-0003"
+# print(d3.date, d3.usa_date)
