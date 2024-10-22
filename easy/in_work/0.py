@@ -1,58 +1,21 @@
-from functools import total_ordering
+from time import time
 
 
-@total_ordering
-class Rectangle:
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
-        self.__area = self.width * self.height
+class Timer:
+    def __init__(self, fn):
+        self.fn = fn
 
-    @property
-    def area(self):
-        return self.__area
-
-    def __eq__(self, other):
-        if isinstance(other, Rectangle):
-            return self.area == other.area
-        else:
-            return self.area == other
-
-    def __lt__(self, other):
-        if isinstance(other, Rectangle):
-            return self.area < other.area
-        else:
-            return self.area < other
+    def __call__(self, *args, **kwargs):
+        start = time()
+        self.fn(*args, **kwargs)
+        end = time()
+        print(f"Execution time: {end - start} seconds")
 
 
-r1 = Rectangle(3, 4)
-assert r1.width == 3
-assert r1.height == 4
-assert r1.area == 12
-assert isinstance(type(r1).area, property), "Вы не создали property area"
-#
-assert r1 > 11
-assert not r1 > 12
-assert r1 >= 12
-assert r1 <= 12
-assert not r1 > 13
-assert not r1 == 13
-assert r1 != 13
-assert r1 == 12
-#
-r2 = Rectangle(2, 6)
-assert r1 == r2
-assert not r1 != r2
-assert not r1 > r2
-assert not r1 < r2
-assert r1 >= r2
-assert r1 <= r2
-#
-# r3 = Rectangle(5, 2)
-# assert not r2 == r3
-# assert r2 != r3
-# assert r2 > r3
-# assert not r2 < r3
-# assert r2 >= r3
-# assert not r2 <= r3
-# print("Good")
+@Timer
+def calculate():
+    for i in range(10000000):
+        2**100
+
+
+calculate()
