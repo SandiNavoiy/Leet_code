@@ -13,6 +13,6 @@ class Solution:
         return max(dp)
 
 
-nums = [0,1,0,3,2,3]
+nums = [0, 1, 0, 3, 2, 3]
 s = Solution()
 print(s.lengthOfLIS(nums))

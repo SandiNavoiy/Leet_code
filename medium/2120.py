@@ -24,9 +24,11 @@ class Solution:
 
         return rez
 
+
 n = 3
 startPos = [0, 1]
 s = "RRDDLU"
 sol = Solution()
-print(sol.executeInstructions(n, startPos, s))  # Ожидаемый результат: [1, 5, 4, 3, 1, 0]
-
+print(
+    sol.executeInstructions(n, startPos, s)
+)  # Ожидаемый результат: [1, 5, 4, 3, 1, 0]

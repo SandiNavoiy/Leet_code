@@ -1,8 +1,7 @@
 class MyCircularQueue:
-
     def __init__(self, k: int):
-       self.queue = []
-       self.size = k
+        self.queue = []
+        self.size = k
 
     def enQueue(self, value: int) -> bool:
         """вставка элемена"""

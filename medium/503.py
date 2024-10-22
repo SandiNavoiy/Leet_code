@@ -1,11 +1,11 @@
 class Solution:
     def nextGreaterElements(self, nums: list[int]) -> list[int]:
-        ''''''
+        """"""
         rez = []
         new_arr = nums + nums
 
         for i in range(len(nums)):
-            for j in range(i+1, len(new_arr)):
+            for j in range(i + 1, len(new_arr)):
                 flag = 0
                 if new_arr[j] > nums[i]:
                     flag = 1
@@ -16,7 +16,8 @@ class Solution:
 
         return rez
 
-nums = [1,2,1]
+
+nums = [1, 2, 1]
 s = Solution()
 print(s.nextGreaterElements(nums))
-#[2,-1,2]
+# [2,-1,2]

@@ -5,7 +5,9 @@ class Solution:
             zero = one = 0
             mask = 1 << i
             for num in nums:
-                if mask & num: one += 1
-                else: zero += 1
+                if mask & num:
+                    one += 1
+                else:
+                    zero += 1
             ans += one * zero
         return ans

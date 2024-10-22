@@ -2,62 +2,62 @@ from collections import deque
 
 
 class MyCircularDeque:
-
     def __init__(self, k: int):
         self.queue = deque()
         self.size = k
 
     def insertFront(self, value: int) -> bool:
-        '''добавление елемента в начало'''
+        """добавление елемента в начало"""
         if self.size == len(self.queue):
             return False
         self.queue.appendleft(value)
         return True
 
     def insertLast(self, value: int) -> bool:
-        '''добавление элемента в конец'''
+        """добавление элемента в конец"""
         if self.size == len(self.queue):
             return False
         self.queue.append(value)
         return True
 
     def deleteFront(self) -> bool:
-        '''удаляет с начала'''
-        if  len(self.queue) == 0:
+        """удаляет с начала"""
+        if len(self.queue) == 0:
             return False
         self.queue.popleft()
         return True
 
     def deleteLast(self) -> bool:
-        '''удаление с конца'''
-        if  len(self.queue) == 0:
+        """удаление с конца"""
+        if len(self.queue) == 0:
             return False
         self.queue.pop()
         return True
 
     def getFront(self) -> int:
-        '''возвращает левый элемент'''
+        """возвращает левый элемент"""
         if len(self.queue) == 0:
             return -1
         return self.queue[0]
 
     def getRear(self) -> int:
-        '''возвращает правый элемент'''
+        """возвращает правый элемент"""
         if len(self.queue) == 0:
             return -1
         return self.queue[-1]
 
     def isEmpty(self) -> bool:
-        '''пустой'''
+        """пустой"""
         if len(self.queue) == 0:
             return True
         return False
 
     def isFull(self) -> bool:
-        '''полный'''
+        """полный"""
         if len(self.queue) == self.size:
             return True
         return False
+
 
 # Your MyCircularDeque object will be instantiated and called as such:
 k = 5

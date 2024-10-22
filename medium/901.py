@@ -1,5 +1,4 @@
 class StockSpanner:
-
     def __init__(self):
         self.stack = []
 
@@ -10,6 +9,7 @@ class StockSpanner:
 
         self.stack.append((price, counter))
         return counter
+
 
 # Your StockSpanner object will be instantiated and called as such:
 obj = StockSpanner()

@@ -4,7 +4,6 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-
     def __init__(self, head: Optional[ListNode]):
         self.head = head
 
@@ -17,6 +16,7 @@ class Solution:
                 output = curr.val
             curr = curr.next
         return output
+
 
 # Your Solution object will be instantiated and called as such:
 # obj = Solution(head)

@@ -1,84 +1,58 @@
-# Напишите определение класса ChessPlayer
+from functools import total_ordering
 
 
-# Ниже код для проверки методов класса ChessPlayer
-class ChessPlayer:
-    def __init__(self, name, soname, rating):
-        self.name = name
-        self.surname = soname
-        self.rating = rating
+@total_ordering
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+        self.__area = self.width * self.height
+
+    @property
+    def area(self):
+        return self.__area
 
     def __eq__(self, other):
-        if isinstance(other, int):
-            return self.rating == other
-        elif isinstance(other, ChessPlayer):
-            return self.rating == other.rating
+        if isinstance(other, Rectangle):
+            return self.area == other.area
         else:
-            return "Невозможно выполнить сравнение"
-
-    def __ne__(self, other):
-        if isinstance(other, int):
-            return self.rating != other
-        elif isinstance(other, ChessPlayer):
-            return self.rating != other.rating
-        else:
-            return "Невозможно выполнить сравнение"
-
-    def __gt__(self, other):
-        if isinstance(other, int):
-            return self.rating > other
-        elif isinstance(other, ChessPlayer):
-            return self.rating > other.rating
-        else:
-            return "Невозможно выполнить сравнение"
+            return self.area == other
 
     def __lt__(self, other):
-        if isinstance(other, int):
-            return self.rating < other
-        elif isinstance(other, ChessPlayer):
-            return self.rating < other.rating
+        if isinstance(other, Rectangle):
+            return self.area < other.area
         else:
-            return "Невозможно выполнить сравнение"
+            return self.area < other
 
 
-magnus = ChessPlayer("Carlsen", "Magnus", 2847)
-assert magnus.name == "Carlsen"
-assert magnus.surname == "Magnus"
-assert magnus.rating == 2847
-ian = ChessPlayer("Ian", "Nepomniachtchi", 2789)
-assert not magnus == 4000
-
-assert ian == 2789
-assert not magnus == ian
-assert magnus > ian
-assert not magnus < ian
-assert (magnus < [1, 2]) == "Невозможно выполнить сравнение"
+r1 = Rectangle(3, 4)
+assert r1.width == 3
+assert r1.height == 4
+assert r1.area == 12
+assert isinstance(type(r1).area, property), "Вы не создали property area"
 #
-v1 = ChessPlayer("Гарри ", "Каспаров", 10)
-v2 = ChessPlayer("Бобби", "Фишер", 20)
-v3 = ChessPlayer("Bot", "Bot", 20)
+assert r1 > 11
+assert not r1 > 12
+assert r1 >= 12
+assert r1 <= 12
+assert not r1 > 13
+assert not r1 == 13
+assert r1 != 13
+assert r1 == 12
 #
-assert isinstance(v1, ChessPlayer)
-assert isinstance(v2, ChessPlayer)
-assert v2.__dict__ == {"name": "Бобби", "surname": "Фишер", "rating": 20}
-assert v1.__dict__ == {"name": "Гарри ", "surname": "Каспаров", "rating": 10}
-assert v1 > 5
-assert not v1 > 10
-assert not v1 > 11
-assert not v1 < 5
-assert not v1 < 10
-assert v1 < 11
-assert not v1 == 5
-assert v1 == 10
-assert not v1 == 11
-assert not v1 > v2
-assert not v1 == v2
-assert v3 == v2
-assert not v3 != v2
-assert v1 < v2
-assert (v1 > "fdsfd") == "Невозможно выполнить сравнение"
-assert (v1 < "fdsfd") == "Невозможно выполнить сравнение"
-assert (v1 == "fdsfd") == "Невозможно выполнить сравнение"
-assert (v1 == [1, 2]) == "Невозможно выполнить сравнение"
-assert (v1 < [1, 2]) == "Невозможно выполнить сравнение"
-print("Good")
+r2 = Rectangle(2, 6)
+assert r1 == r2
+assert not r1 != r2
+assert not r1 > r2
+assert not r1 < r2
+assert r1 >= r2
+assert r1 <= r2
+#
+# r3 = Rectangle(5, 2)
+# assert not r2 == r3
+# assert r2 != r3
+# assert r2 > r3
+# assert not r2 < r3
+# assert r2 >= r3
+# assert not r2 <= r3
+# print("Good")

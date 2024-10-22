@@ -2,9 +2,8 @@ from collections import defaultdict
 
 
 class FreqStack:
-
     def __init__(self):
-        #количество символов
+        # количество символов
         self.freq = defaultdict(int)
         # групировка по символам
         self.group = defaultdict(list)
@@ -22,6 +21,7 @@ class FreqStack:
         if not self.group[self.maxFreq]:
             self.maxFreq -= 1
         return x
+
 
 # Your FreqStack object will be instantiated and called as such:
 # obj = FreqStack()

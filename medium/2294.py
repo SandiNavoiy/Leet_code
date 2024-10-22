@@ -1,6 +1,6 @@
 class Solution:
     def partitionArray(self, nums: list[int], k: int) -> int:
-        ''''''
+        """"""
         nums.sort()
         if k == 0:
             return len(set(nums))
@@ -17,7 +17,7 @@ class Solution:
         return v + 1
 
 
-nums = [3,6,1,2,5]
+nums = [3, 6, 1, 2, 5]
 k = 2
 s = Solution()
 print(s.partitionArray(nums, k))

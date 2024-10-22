@@ -1,6 +1,6 @@
 class Solution:
     def maxDepth(self, s: str) -> int:
-        ''''''
+        """"""
         t = 0
         rez = 0
         for i in s:

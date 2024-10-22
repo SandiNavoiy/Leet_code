@@ -20,8 +20,9 @@ class Solution:
         actual_position = self.flipped_positions.get(rand_index, rand_index)
 
         # Обновление словаря перевёрнутых позиций
-        self.flipped_positions[rand_index] = self.flipped_positions.get(self.total - self.flipped_count - 1,
-                                                                        self.total - self.flipped_count - 1)
+        self.flipped_positions[rand_index] = self.flipped_positions.get(
+            self.total - self.flipped_count - 1, self.total - self.flipped_count - 1
+        )
 
         # Увеличение счётчика перевёрнутых ячеек
         self.flipped_count += 1
@@ -30,9 +31,11 @@ class Solution:
         return [actual_position // self.n, actual_position % self.n]
 
     def reset(self) -> None:
-        ''''''
+        """"""
         self.flipped_positions.clear()
         self.flipped_count = 0
+
+
 # Your Solution object will be instantiated and called as such:
 
 m = 6

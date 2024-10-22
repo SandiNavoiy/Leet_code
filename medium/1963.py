@@ -1,6 +1,6 @@
 class Solution:
     def minSwaps(self, s: str) -> int:
-        ''''''
+        """"""
         c = 0
 
         stack = []
@@ -14,8 +14,9 @@ class Solution:
                 else:
                     stack.pop()
 
-
         return c
+
+
 s = "]]][[["
 sol = Solution()
 print(sol.minSwaps(s))

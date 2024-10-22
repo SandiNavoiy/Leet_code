@@ -2,7 +2,6 @@ import random
 
 
 class RandomizedSet:
-
     def __init__(self):
         self.data = {}
         self.ind = 0
@@ -25,6 +24,7 @@ class RandomizedSet:
         t = list(self.data.keys())
 
         return random.choice(t)
+
 
 # Your RandomizedSet object will be instantiated and called as such:
 obj = RandomizedSet()
