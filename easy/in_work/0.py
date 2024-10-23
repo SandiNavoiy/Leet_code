@@ -1,98 +1,49 @@
-class BankAccount:
-    def __init__(self, name, balance):
-        self.name = name
-        self.balance = balance
-
-    def __str__(self):
-        return self.name
-
-    def __add__(self, other):
-        if isinstance(other, (BankAccount, Numbers)):
-            return self.balance + other.balance if isinstance(other, BankAccount) else self.balance + other._values
-        elif isinstance(other, (int, float)):
-            return self.balance + other
-
-    def __radd__(self, other):
-        if isinstance(other, (BankAccount, Numbers)):
-            return other.balance + self.balance if isinstance(other, BankAccount) else other._values + self.balance
-        elif isinstance(other, (int, float)):
-            return other + self.balance
+# Напишите определение классов Song и Playlist
 
 
-class Numbers:
-    def __init__(self, values: list):
-        self._values = sum(values)
-
-    def __add__(self, other):
-        if isinstance(other, (Numbers, BankAccount)):
-            return self._values + other.balance if isinstance(other, BankAccount) else self._values + other._values
-        elif isinstance(other, (int, float)):
-            return self._values + other
-
-    def __radd__(self, other):
-        if isinstance(other, (Numbers, BankAccount)):
-            return self._values + other.balance if isinstance(other, BankAccount) else self._values + other._values
-        elif isinstance(other, (int, float)):
-            return self._values + other
+# Ниже код для проверки методов классов Song и Playlist
 
 
-lst = [
-    BankAccount('Jack', 1000),
-    Numbers([1, 2, 3, 4, 5]),
-    BankAccount('Ivan', 30),
-    7.5,
-    Numbers([10, 20, 30, 40, 50]),
-    BankAccount('Frank', 2000),
-    10
-]
-print(sum(lst))
+class Playlist:
+    def __init__(self):
+        self.songs = []
+
+    def add_song(self, x):
+        self.songs.append(x)
+
+    def __getitem__(self, index):
+        return self.songs[index]
+
+    def __setitem__(self, index, value):
+        self.songs.insert(index, value)
 
 
+class Song:
+    def __init__(self, title, artist):
+        self.title = title
+        self.artist = artist
+
+
+playlist = Playlist()
+assert len(playlist.songs) == 0
+assert isinstance(playlist, Playlist)
 #
-# lst = [4, BankAccount('Petr', 100), 5]
-# assert sum(lst) == 109
+playlist.add_song(Song("Paradise", "Coldplay"))
+
+assert playlist[0].title == "Paradise"
+assert playlist[0].artist == "Coldplay"
+assert len(playlist.songs) == 1
 #
-# lst = [500, BankAccount('Vanya', 200), 7, BankAccount('Ivan', 300), 3]
-# assert sum(lst) == 1010
+playlist[0] = Song("Resistance", "Muse")
+assert playlist[0].title == "Resistance"
+assert playlist[0].artist == "Muse"
+assert playlist[1].title == "Paradise"
+assert playlist[1].artist == "Coldplay"
 #
-# lst = [
-#     BankAccount('Vanya', 20),
-#     BankAccount('Ivan', 30),
-#     BankAccount('Frank', 40),
-# ]
-# assert sum(lst) == 90
+# playlist[1] = Song("Helena", "My Chemical Romance")
+# assert playlist[1].title == 'Helena'
+# assert playlist[1].artist == 'My Chemical Romance'
 #
-# lst = [
-#     Numbers([10, 20, 10]),
-#     BankAccount('Ivan', 30),
-#     Numbers([30, 40]),
-# ]
-# assert sum(lst) == 140
-#
-# lst = [
-#     BankAccount('Jack', 1000),
-#     Numbers([1, 2, 3, 4, 5]),
-#     BankAccount('Ivan', 30),
-#     7.5,
-#     Numbers([10, 20, 30, 40, 50]),
-#     BankAccount('Frank', 2000),
-#     10
-# ]
-# assert sum(lst) == 3212.5
-#
-# lst = [
-#     Numbers([1, 2, 3, 4, 5]),
-#     Numbers([10, 20, 30, 40, 50]),
-#     Numbers([35]),
-# ]
-# assert sum(lst) == 200
-#
-# lst = [
-#     10,
-#     Numbers([1, 2, 3, 4, 5]),
-#     12.5,
-#     Numbers([10, 20, 30, 40, 50]),
-#     39,
-#     Numbers([35]),
-# ]
-# assert sum(lst) == 261.5
+# assert playlist[2].title == 'Paradise'
+# assert playlist[2].artist == 'Coldplay'
+# print('Good')
