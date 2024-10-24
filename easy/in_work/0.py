@@ -1,175 +1,30 @@
-# напишите определение классов
-class Shape:
-    pass
+class MyList(list):
+    def remove_all(self, item):
+        while item in self:
+            self.remove(item)
 
 
-class Polygon(Shape):
-    pass
 
 
-class Ellipse(Shape):
-    pass
-
-
-class Triangle(Polygon):
-    pass
-
-
-class Rectangle(Polygon):
-    pass
-
-
-class Square(Rectangle):
-    pass
-
-
-class Circle(Ellipse):
-    pass
-
-
-shapes = [
-    Polygon(),
-    Triangle(),
-    Ellipse(),
-    Polygon(),
-    Triangle(),
-    Ellipse(),
-    Polygon(),
-    Square(),
-    Polygon(),
-    Circle(),
-    Shape(),
-    Polygon(),
-    Triangle(),
-    Circle(),
-    Ellipse(),
-    Shape(),
-    Circle(),
-    Rectangle(),
-    Circle(),
-    Circle(),
-    Square(),
-    Square(),
-    Circle(),
-    Rectangle(),
-    Rectangle(),
-    Polygon(),
-    Polygon(),
-    Polygon(),
-    Square(),
-    Square(),
-    Rectangle(),
-    Square(),
-    Rectangle(),
-    Polygon(),
-    Circle(),
-    Triangle(),
-    Rectangle(),
-    Shape(),
-    Rectangle(),
-    Polygon(),
-    Polygon(),
-    Ellipse(),
-    Square(),
-    Circle(),
-    Shape(),
-    Polygon(),
-    Ellipse(),
-    Triangle(),
-    Square(),
-    Polygon(),
-    Triangle(),
-    Circle(),
-    Rectangle(),
-    Rectangle(),
-    Ellipse(),
-    Triangle(),
-    Rectangle(),
-    Polygon(),
-    Shape(),
-    Circle(),
-    Rectangle(),
-    Polygon(),
-    Triangle(),
-    Circle(),
-    Polygon(),
-    Rectangle(),
-    Polygon(),
-    Square(),
-    Triangle(),
-    Circle(),
-    Ellipse(),
-    Circle(),
-    Shape(),
-    Circle(),
-    Triangle(),
-    Ellipse(),
-    Square(),
-    Circle(),
-    Triangle(),
-    Polygon(),
-    Square(),
-    Polygon(),
-    Circle(),
-    Ellipse(),
-    Polygon(),
-    Shape(),
-    Triangle(),
-    Rectangle(),
-    Circle(),
-    Square(),
-    Triangle(),
-    Triangle(),
-    Ellipse(),
-    Square(),
-    Circle(),
-    Rectangle(),
-    Ellipse(),
-    Shape(),
-    Triangle(),
-    Ellipse(),
-    Circle(),
-    Shape(),
-    Polygon(),
-    Polygon(),
-    Ellipse(),
-    Rectangle(),
-    Square(),
-    Shape(),
-    Circle(),
-    Triangle(),
-    Circle(),
-    Circle(),
-    Circle(),
-    Triangle(),
-    Ellipse(),
-    Polygon(),
-    Circle(),
-    Ellipse(),
-    Rectangle(),
-    Circle(),
-    Shape(),
-    Polygon(),
-    Polygon(),
-    Triangle(),
-    Rectangle(),
-    Polygon(),
-    Shape(),
-    Circle(),
-    Shape(),
-    Circle(),
-    Triangle(),
-    Ellipse(),
-    Square(),
-    Circle(),
-    Triangle(),
-    Ellipse(),
-    Square(),
-    Circle(),
-]
-circle = [i for i in shapes if isinstance(i, Circle)]
-rectangle = [i for i in shapes if isinstance(i, Rectangle)]
-polygon = [i for i in shapes if isinstance(i, Polygon)]
-print(len(circle))
-print(len(rectangle))
-print(len(polygon))
+# Ниже располагаются проверки для класса MyList
+s = MyList([1, 2, 3, 2, 1, 2])
+assert s == [1, 2, 3, 2, 1, 2]
+s.remove_all(2)
+# assert s == [1, 3, 1]
+# s.remove_all(1)
+# assert s == [3]
+# s.remove_all(5)
+# assert s == [3]
+# s.remove_all(3)
+# assert s == []
+#
+# k = MyList([0]*20)
+# assert k == [0]*20
+# k.remove_all(7)
+# assert k == [0]*20
+# k.append(8)
+# k.append(0)
+# k.append(2)
+# k.remove_all(0)
+# assert k == [8, 2]
+# print('Good')
