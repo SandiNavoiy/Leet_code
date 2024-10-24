@@ -1,49 +1,175 @@
-# Напишите определение классов Song и Playlist
+# напишите определение классов
+class Shape:
+    pass
 
 
-# Ниже код для проверки методов классов Song и Playlist
+class Polygon(Shape):
+    pass
 
 
-class Playlist:
-    def __init__(self):
-        self.songs = []
-
-    def add_song(self, x):
-        self.songs.append(x)
-
-    def __getitem__(self, index):
-        return self.songs[index]
-
-    def __setitem__(self, index, value):
-        self.songs.insert(index, value)
+class Ellipse(Shape):
+    pass
 
 
-class Song:
-    def __init__(self, title, artist):
-        self.title = title
-        self.artist = artist
+class Triangle(Polygon):
+    pass
 
 
-playlist = Playlist()
-assert len(playlist.songs) == 0
-assert isinstance(playlist, Playlist)
-#
-playlist.add_song(Song("Paradise", "Coldplay"))
+class Rectangle(Polygon):
+    pass
 
-assert playlist[0].title == "Paradise"
-assert playlist[0].artist == "Coldplay"
-assert len(playlist.songs) == 1
-#
-playlist[0] = Song("Resistance", "Muse")
-assert playlist[0].title == "Resistance"
-assert playlist[0].artist == "Muse"
-assert playlist[1].title == "Paradise"
-assert playlist[1].artist == "Coldplay"
-#
-# playlist[1] = Song("Helena", "My Chemical Romance")
-# assert playlist[1].title == 'Helena'
-# assert playlist[1].artist == 'My Chemical Romance'
-#
-# assert playlist[2].title == 'Paradise'
-# assert playlist[2].artist == 'Coldplay'
-# print('Good')
+
+class Square(Rectangle):
+    pass
+
+
+class Circle(Ellipse):
+    pass
+
+
+shapes = [
+    Polygon(),
+    Triangle(),
+    Ellipse(),
+    Polygon(),
+    Triangle(),
+    Ellipse(),
+    Polygon(),
+    Square(),
+    Polygon(),
+    Circle(),
+    Shape(),
+    Polygon(),
+    Triangle(),
+    Circle(),
+    Ellipse(),
+    Shape(),
+    Circle(),
+    Rectangle(),
+    Circle(),
+    Circle(),
+    Square(),
+    Square(),
+    Circle(),
+    Rectangle(),
+    Rectangle(),
+    Polygon(),
+    Polygon(),
+    Polygon(),
+    Square(),
+    Square(),
+    Rectangle(),
+    Square(),
+    Rectangle(),
+    Polygon(),
+    Circle(),
+    Triangle(),
+    Rectangle(),
+    Shape(),
+    Rectangle(),
+    Polygon(),
+    Polygon(),
+    Ellipse(),
+    Square(),
+    Circle(),
+    Shape(),
+    Polygon(),
+    Ellipse(),
+    Triangle(),
+    Square(),
+    Polygon(),
+    Triangle(),
+    Circle(),
+    Rectangle(),
+    Rectangle(),
+    Ellipse(),
+    Triangle(),
+    Rectangle(),
+    Polygon(),
+    Shape(),
+    Circle(),
+    Rectangle(),
+    Polygon(),
+    Triangle(),
+    Circle(),
+    Polygon(),
+    Rectangle(),
+    Polygon(),
+    Square(),
+    Triangle(),
+    Circle(),
+    Ellipse(),
+    Circle(),
+    Shape(),
+    Circle(),
+    Triangle(),
+    Ellipse(),
+    Square(),
+    Circle(),
+    Triangle(),
+    Polygon(),
+    Square(),
+    Polygon(),
+    Circle(),
+    Ellipse(),
+    Polygon(),
+    Shape(),
+    Triangle(),
+    Rectangle(),
+    Circle(),
+    Square(),
+    Triangle(),
+    Triangle(),
+    Ellipse(),
+    Square(),
+    Circle(),
+    Rectangle(),
+    Ellipse(),
+    Shape(),
+    Triangle(),
+    Ellipse(),
+    Circle(),
+    Shape(),
+    Polygon(),
+    Polygon(),
+    Ellipse(),
+    Rectangle(),
+    Square(),
+    Shape(),
+    Circle(),
+    Triangle(),
+    Circle(),
+    Circle(),
+    Circle(),
+    Triangle(),
+    Ellipse(),
+    Polygon(),
+    Circle(),
+    Ellipse(),
+    Rectangle(),
+    Circle(),
+    Shape(),
+    Polygon(),
+    Polygon(),
+    Triangle(),
+    Rectangle(),
+    Polygon(),
+    Shape(),
+    Circle(),
+    Shape(),
+    Circle(),
+    Triangle(),
+    Ellipse(),
+    Square(),
+    Circle(),
+    Triangle(),
+    Ellipse(),
+    Square(),
+    Circle(),
+]
+circle = [i for i in shapes if isinstance(i, Circle)]
+rectangle = [i for i in shapes if isinstance(i, Rectangle)]
+polygon = [i for i in shapes if isinstance(i, Polygon)]
+print(len(circle))
+print(len(rectangle))
+print(len(polygon))
