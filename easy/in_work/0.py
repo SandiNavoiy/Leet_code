@@ -1,30 +1,21 @@
-class MyList(list):
-    def remove_all(self, item):
-        while item in self:
-            self.remove(item)
+class PrettyPrint:
+    def __str__(self):
+        return f"{self.__class__.__name__}({', '.join([f'{i}={self.__dict__[i]}' for i in self.__dict__])})"
 
 
+class Student(PrettyPrint):
+    def __init__(self, name, surname, student_id, faculty, specialty):
+        self.student_id = student_id
+        self.name = name
+        self.surname = surname
+        self.faculty = faculty
+        self.specialty = specialty
+
+    def __str__(self):
+        return f"{self.name} {self.surname}"
 
 
-# Ниже располагаются проверки для класса MyList
-s = MyList([1, 2, 3, 2, 1, 2])
-assert s == [1, 2, 3, 2, 1, 2]
-s.remove_all(2)
-# assert s == [1, 3, 1]
-# s.remove_all(1)
-# assert s == [3]
-# s.remove_all(5)
-# assert s == [3]
-# s.remove_all(3)
-# assert s == []
-#
-# k = MyList([0]*20)
-# assert k == [0]*20
-# k.remove_all(7)
-# assert k == [0]*20
-# k.append(8)
-# k.append(0)
-# k.append(2)
-# k.remove_all(0)
-# assert k == [8, 2]
-# print('Good')
+student_1 = Student("Иван", "Иванов", 12345, "Физический", "Математика")
+student_2 = Student("Анна", "Смирнова", 67890, "Химический", "Биология")
+print(student_1)
+print(student_2)
