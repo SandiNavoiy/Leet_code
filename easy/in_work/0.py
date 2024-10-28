@@ -1,57 +1,33 @@
-# Создайте классы Database MySQLDatabase и PostgreSQLDatabase
-from abc import ABC, abstractmethod
+def is_dunder(param):
+    if len(param) < 6:
+        return False
+    s1= param[:2]
+    s3= param[-2:]
+    s2 = param[2:-2]
+    if s1 != "__":
+        return False
+    if s3 != "__":
+        return False
+    if s2.count("_") != 0:
+        return False
+    if len(s2) < 2:
+        return False
+    if not s2.isalpha():
+        return False
 
 
-class Database(ABC):
-    @abstractmethod
-    def connect(self):
-        pass
 
-    @abstractmethod
-    def execute(self, query):
-        pass
-
-    @abstractmethod
-    def disconnect(self):
-        pass
-
-class MySQLDatabase(Database):
-
-    def connect(self):
-        print("Connecting to MySQL database...")
+    return True
 
 
-    def execute(self, query):
-        print(f"Executing query '{query}' in MySQL database...")
+assert is_dunder('__str__') == True
+assert is_dunder('___bool___') == False
+assert is_dunder('__s__') == False
+assert is_dunder('__abvc3__') == False
+assert is_dunder('____') == False
+assert is_dunder('_str__') == False
+assert is_dunder('__str_') == False
+assert is_dunder('__ab__') == True
+#
+# print('test is ok')
 
-
-    def disconnect(self):
-        print("Disconnecting from MySQL database...")
-
-class PostgreSQLDatabase(Database):
-
-    def connect(self):
-        print("Connecting to PostgreSQL database...")
-
-
-    def execute(self, query):
-        print(f"Executing query '{query}' in PostgreSQL database...")
-
-
-    def disconnect(self):
-        print("Disconnecting from PostgreSQL database...")
-
-# Код для проверки
-
-mysql_db = MySQLDatabase()
-postgresql_db = PostgreSQLDatabase()
-
-mysql_db.connect()
-mysql_db.execute(
-    "SELECT * FROM customers;")
-mysql_db.disconnect()
-
-postgresql_db.connect()
-postgresql_db.execute(
-    "SELECT * FROM customers;")
-postgresql_db.disconnect()
