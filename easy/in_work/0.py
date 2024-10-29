@@ -1,33 +1,19 @@
-def is_dunder(param):
-    if len(param) < 6:
-        return False
-    s1= param[:2]
-    s3= param[-2:]
-    s2 = param[2:-2]
-    if s1 != "__":
-        return False
-    if s3 != "__":
-        return False
-    if s2.count("_") != 0:
-        return False
-    if len(s2) < 2:
-        return False
-    if not s2.isalpha():
-        return False
+class SequenceIterator:
+    def __init__(self, value):
+        self.value = value[::2] + value[1::2]
+        self.index = 0
 
+    def __iter__(self):
+        return self
+    def __next__(self):
+        if self.index == len(self.value):
+            raise StopIteration
+        t = self.value[self.index]
+        self.index += 1
+        return t
 
-
-    return True
-
-
-assert is_dunder('__str__') == True
-assert is_dunder('___bool___') == False
-assert is_dunder('__s__') == False
-assert is_dunder('__abvc3__') == False
-assert is_dunder('____') == False
-assert is_dunder('_str__') == False
-assert is_dunder('__str_') == False
-assert is_dunder('__ab__') == True
 #
-# print('test is ok')
+container = SequenceIterator([1, 5, 4, 6, 43, True, 'hello'])
 
+for i in container:
+    print(i)
