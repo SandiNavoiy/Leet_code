@@ -1,53 +1,91 @@
-class StackIterator:
-    def __init__(self, value):
-        self.value = value
-        self.index = 0
-
-    def __next__(self):
-        # if self.index == len(self.value):
-        #     raise StopIteration
-        t = self.value[self.index]
-        self.index += 1
-        return t
+from dataclasses import dataclass, field
+from typing import List
 
 
-class Stack:
+@dataclass
+class Product:
+    name: str
+    cost: int = field(repr=False)
+
+
+@dataclass
+class Promo:
+    kod: str
+    promo: int = field(repr=False)
+    spisok: List[Product] = field(default_factory=list, repr=False)
+
+    def is_applicable(self, product: Product):
+        # Промокод применим ко всей корзине, если список товаров пустой
+        return not self.spisok or product in self.spisok
+
+
+class Cart:
     def __init__(self):
-        self.items = []
+        self.products = []
+        self.n = 0
+        self.flag = False
+        self.promo = None
 
-    def push(self, item):
-        self.items.append(item)
+    def add_product(self, product, quantity=1):
+        # Добавляем продукт и его количество в корзину
+        for _ in range(quantity):
+            self.products.append(product)
+        print(f"Добавлено: {quantity} x {product.name}")
 
-    def pop(self):
-        if len(self.items) == 0:
-            print("Empty Stack")
-        else:
-            return self.items.pop()
+    def apply_discount(self, n):
+        if n > 100 or n < 0:
+            raise ValueError("Неправильное значение скидки")
+        self.n = n
 
-    def peek(self):
-        if len(self.items) == 0:
-            print("Empty Stack")
-        else:
-            return self.items[-1]
+    def get_total(self):
+        total = 0
+        for product in self.products:
+            total += product.cost
 
-    def is_empty(self):
-        return len(self.items) == 0
+        if self.n:
+            # Применяем общую скидку на корзину, если она задана
+            return total * (100 - self.n) / 100
 
-    def size(self):
-        return len(self.items)
+        if self.promo and self.flag:
+            # Применение промокода, если промокод активен
+            discount_total = 0
+            for product in self.products:
+                if self.promo.is_applicable(product):
+                    discount_total += product.cost * (100 - self.promo.promo) / 100
+                else:
+                    discount_total += product.cost
+            return discount_total
 
-    def __iter__(self):
-        return StackIterator(self)
+        return total
+
+    def apply_promo(self, promo_code):
+        global ACTIVE_PROMO
+        for promo in ACTIVE_PROMO:
+            if promo.kod == promo_code:
+                self.promo = promo
+                self.flag = True
+                print(f"Промокод {promo_code} успешно применен")
+                return
+        self.flag = False
+        print(f"Промокод {promo_code} не найден")
 
 
-stack = Stack()
+# Примеры использования
+book = Product("Книга", 100.0)
+usb = Product("Флешка", 50.0)
+pen = Product("Ручка", 10.0)
 
-stack.push(100)
-stack.push(True)
-stack.push("hello")
-stack.push("world")
+# Определение активных промокодов
+ACTIVE_PROMO = [
+    Promo("new", 20, [pen]),  # Промокод 20% на ручку
+    Promo("all_goods", 30),  # Промокод 30% на все товары
+]
 
-# Используем итератор для обхода стека
-for item in stack:
-    print(item)
-#
+cart = Cart()
+cart.add_product(book, 2)  # Добавить 2 книги
+cart.add_product(pen)  # Добавить 1 ручку
+print("Общая сумма без скидок:", cart.get_total())
+
+# Применение промокода на 20% для ручки
+cart.apply_promo("new")
+print("Сумма с промокодом 'new':", cart.get_total())
