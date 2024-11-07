@@ -9,51 +9,110 @@ class File:
         print(f"Файл {self.name} был удален")
         self.is_deleted = True
 
-    def read(self):
+    def restore_from_trash(self):
+        print(f"Файл {self.name} восстановлен из корзины")
+        self.in_trash = False
 
+    def read(self):
+        if self.is_deleted:
+            print(f"ErrorReadFileDeleted({self.name})")
+            return
+        elif self.in_trash:
+            print(f"ErrorReadFileTrashed({self.name})")
+            return
+
+        else:
+            print(f"Прочитали все содержимое файла {self.name}")
+
+    def write(self, content):
+        if self.is_deleted:
+            print(f"ErrorWriteFileDeleted({self.name})")
+            return
+        elif self.in_trash:
+            print(f"ErrorWriteFileTrashed({self.name})")
+            return
+
+        else:
+            print(f"Записали значение {content} в файл {self.name}")
+
+
+class Trash:
+    content = []
+
+    @staticmethod
+    def add(file):
+        if not isinstance(file, File):
+            print(f"В корзину можно добавлять только файл")
+        else:
+            Trash.content.append(file)
+            file.in_trash = True
+
+    @staticmethod
+    def restore():
+        print(f"Восстанавливаем файлы из корзины")
+        for file in Trash.content:
+            file.restore_from_trash()
+        Trash.content = []
+        print(f"Корзина пуста")
+
+    @staticmethod
+    def clear():
+        print(f"Очищаем корзину")
+        for file in Trash.content:
+            file.remove()
+        Trash.content = []
+        print(f"Корзина пуста")
 
 
 # Ниже код для проверки класса File
-
-
 f1 = File("puppies.jpg")
-assert f1.name == "puppies.jpg"
-assert f1.in_trash is False
-assert f1.is_deleted is False
+f2 = File("cat.jpg")
+f3 = File("xxx.doc")
+passwords = File("pass.txt")
+
+for file in [f1, f2, f3, passwords]:
+    assert file.is_deleted is False
+    assert file.in_trash is False
+
+f3.read()
+f3.remove()
+assert f3.is_deleted is True
+f3.read()
+f3.write("hello")
 #
-# f1.read()  # Прочитали все содержимое файла puppies.jpg
-f1.remove()  # Файл puppies.jpg был удален
-assert f1.is_deleted is True
-# f1.read()  # ErrorReadFileDeleted(puppies.jpg)
+assert Trash.content == []
 #
-# passwords = File("pass.txt")
-# assert passwords.name == "pass.txt"
-# assert passwords.in_trash is False
-# assert passwords.is_deleted is False
+Trash.add(f2)
+Trash.add(passwords)
+Trash.add(f3)
 #
-# f3 = File("xxx.doc")
+f1.read()
+Trash.add(f1)
+f1.read()
 #
-# assert f3.__dict__ == {"name": "xxx.doc", "in_trash": False, "is_deleted": False}
-# f3.read()
-# f3.remove()
-# assert f3.is_deleted is True
-# f3.read()
-# f3.in_trash = True
-# f3.is_deleted = False
-# f3.read()
-# f3.write("hello")
-# f3.restore_from_trash()
-# assert f3.in_trash is False
-# f3.write("hello")  # Записали значение «hello» в файл cat.jpg
+for file in [f1, f2, f3, passwords]:
+    assert file.in_trash is True
 #
-# f2 = File("cat.jpg")
-# f2.write("hello")  # Записали значение «hello» в файл cat.jpg
-# f2.write([1, 2, 3])  # Записали значение «hello» в файл cat.jpg
-# f2.remove()  # Файл cat.jpg был удален
-# f2.write("world")  # ErrorWriteFileDeleted(cat.jpg)
+for f in [f2, passwords, f3, f1]:
+    assert f in Trash.content
 #
-# peperoni_pizza = Pizza("Пеперони")
-# peperoni_pizza.ingredients.append(tomatoes)
-# peperoni_pizza.ingredients.append(cheese)
-# peperoni_pizza.ingredients.append(peperoni)
-# print("Стоимость пиццы пеперони", peperoni_pizza.cost)
+Trash.restore()
+assert Trash.content == [], "После восстановления корзина должна была очиститься"
+#
+Trash.add(passwords)
+Trash.add(f2)
+Trash.add("hello")
+Trash.add(f1)
+#
+for f in [passwords, f2, f1]:
+    assert f in Trash.content
+#
+
+Trash.clear()
+#
+for file in [passwords, f2, f1]:
+    assert file.is_deleted is True
+#
+assert Trash.content == [], "После удаления файлов корзина должна была очиститься"
+#
+f1.read()
