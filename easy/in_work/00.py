@@ -1,9 +1,13 @@
-class Student:
-    def __init__(self, name):
-        self.name = name
-        self._course = 1
-        self.__marks = []
+def dec(f):
+    def wrapper(x):
+        return f(x) + 5
+
+    return wrapper
 
 
-student = Student(name="Kevin")
-print(student.__dict__)
+@dec
+def square(x):
+    return x
+
+
+print(square(10))
