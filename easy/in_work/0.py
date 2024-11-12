@@ -1,17 +1,12 @@
-class Student:
-    def __init__(self, name):
-        self.name = name
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-    def get_name(self):
-        return self._name
-
-    def set_name(self, value):
-        self._name = value.upper()
-
-    name = property(get_name, set_name)
+    def __str__(self):
+        print(f"Point(x={self.x},y={self.y})")
 
 
-student = Student(name="Kevin")
-print(student.name)
-student.name = "Kev"
-print(student.name)
+p1 = Point(2, 5)
+
+print(p1)
