@@ -1,42 +1,25 @@
-class SparseArray:
-    def __init__(self, *args):
-        self._values = list(args)
-
-    @property
-    def values(self):
-        return tuple(self._values)
-
-    def __getitem__(self, number):
-        if number <= len(self._values):
-            return self._values[number]
+# n, = input()
+# s1 = list(map(int, input().split()))
+# m = input()
+# s2 = list(map(int, input().split()))
+s1 = [6,4,2,1]
+s2 = [9,7,5,5,1]
+s1.sort(reverse=True)
+s2.sort(reverse=True)
+count= 0
+while len(s1) > 0 and len(s2) > 0:
+    if (abs(s1[0] - s2[0]) <= 1) or (abs(s2[0] - s1[0]) <= 1):
+        s1.pop(0)
+        s2.pop(0)
+        count += 1
+        print("первая ветка")
+    else:
+        print("вторая ветка")
+        if s1[0] > s2[0]:
+            s1.pop(0)
         else:
-            self._values.extend([None] * (number - len(self._values)))
-            self._values.append(None)
+            s2.pop(0)
 
-    def __setitem__(self, number, value=None):
-        if number > len(self._values):
-            self._values.extend([None] * (number - len(self._values)))
-            self._values.insert(number, value)
-        else:
-            self._values[number] = value
+    print(s1, s2, count)
 
-    def __delitem__(self, item):
-        if 0 <= int(item) < len(self._values):
-            self._values[int(item)] = None
-
-    def __len__(self):
-        return len(self._values)
-
-
-array = SparseArray()
-print(array.values)
-array[5] = 4
-
-array[0] = 13
-array[10] = 23
-array[5] = 81
-array[7] = 100
-print(array.values)
-print(len(array))
-print(array[20])
-print(array.values)
+print(count)
