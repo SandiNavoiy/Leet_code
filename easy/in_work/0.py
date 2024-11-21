@@ -1,6 +1,13 @@
-t = 7
-while t > 1:
-    t -= 1
-    if t == 3 or t == 1:
-        continue
-    print(t)
+n = input()
+count = 0
+
+while count <= len(n):
+    if n[count] == "a" or n[count] == "e":
+        print("Ага! Нашлась")
+        break
+    else:
+        print(f"Текущая буква: {n[count]}")
+
+    count += 1
+else:
+    print("Распечатали все буквы")
