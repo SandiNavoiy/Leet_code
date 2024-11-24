@@ -1,10 +1,6 @@
-from string import ascii_lowercase
-x = ascii_lowercase
-print(x)
-alphabet= {}
-ind = 1
-for i in x:
-    alphabet[i] = ind
-    ind += 1
-
-print(alphabet)
+t = 7
+while t > 1:
+    t -= 1
+    if t == 3 or t == 1:
+        continue
+    print(t)
