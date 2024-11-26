@@ -1,8 +1,11 @@
-result = []
-for x in range(15):
-    if x % 2 == 0:
-        result.append(x * x)
+s = []
+for i in range (1000, 10000):
+    temp = 0
+    for j in str(i):
+        temp +=int(j)
+    if temp == 20:
+        s.append(i)
+print(sum(s))
 
 
- result = [x*x for x in range(15) if x % 2 == 0]
-print(result)
+
