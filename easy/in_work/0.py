@@ -1,6 +1,8 @@
+result = []
+for x in range(15):
+    if x % 2 == 0:
+        result.append(x * x)
 
-n = int(input())
 
-zeroes  = [i for i in range(1,n+1)]
-
-print(zeroes)
+ result = [x*x for x in range(15) if x % 2 == 0]
+print(result)
