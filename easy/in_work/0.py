@@ -1,8 +1,16 @@
-result = []
-for x in range(15):
-    if x % 2 == 0:
-        result.append(x * x)
+countries = {
+    "Sweden": ["Stockholm", "Göteborg", "Malmö"],
+    "Norway": ["Oslo", "Bergen", "Trondheim"],
+    "England": ["London", "Birmingham", "Manchester"],
+    "Germany": ["Berlin", "Hamburg", "Munich"],
+    "France": ["Paris", "Marseille", "Toulouse"],
+}
+
+city = input()
 
 
- result = [x*x for x in range(15) if x % 2 == 0]
-print(result)
+for k, v in countries.items():
+    if city in v:
+        print(f"{city} is a city in {k}")
+        break
+
