@@ -1,13 +1,5 @@
-def dec(f):
-    def wrapper(x):
-        return f(x) + 5
+from string import punctuation, ascii_uppercase, ascii_lowercase
 
-    return wrapper
-
-
-@dec
-def square(x):
-    return x
-
-
-print(square(10))
+print(ascii_lowercase)
+print(ascii_uppercase)
+print(punctuation)
