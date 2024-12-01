@@ -1,10 +1,11 @@
-# my_list = input().split()
-my_list = [100, 55, 77, 55, 89]
-
-d = {my_list[0]: my_list[0]}
-print(d)
-for i in my_list[1:]:
-    d = d
+n = int(input())
+matr = []
+for i in range(n):
+    matr.append(list(map(int, input().split())))
 
 
-print(d)
+for j in range(len(matr)):
+    for i in range(len(matr[j])):
+        print(matr[i][j], end=" ")
+    print()
+
