@@ -1,11 +1,19 @@
-n = int(input())
-matr = []
+n,m=map(int,input().split())
+
+a=[]
 for i in range(n):
-    matr.append(list(map(int, input().split())))
+    a.append(list(map(int,input().split())))
+#
+#
+# a = [[5,9,2,6], [6,2,4,3], [1,2,8,7]]
 
 
-for j in range(len(matr)):
-    for i in range(len(matr[j])):
-        print(matr[i][j], end=" ")
-    print()
+for i in a:
+    print(sum(i), end = " ")
+print()
+for j in range(len(a[0])):
+    s = 0
+    for i in range(len(a)):
 
+            s = s + a[i][j]
+    print(s, end = " ")
