@@ -1,5 +1,5 @@
-from string import punctuation, ascii_uppercase, ascii_lowercase
+x = "chase enlarge referee cup offense".lower()
 
-print(ascii_lowercase)
-print(ascii_uppercase)
-print(punctuation)
+for i in x.split():
+    print(i)
+print(all([True if "a" in i else False for i in x.split()]))
