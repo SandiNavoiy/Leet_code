@@ -1,2 +1,4 @@
-for i in range(8):
-    print(i)
+import json
+
+
+s = json.loads()

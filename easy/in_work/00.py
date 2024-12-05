@@ -1,16 +1,27 @@
-def unical_word(file_name: str) -> int:
-    with open(f"{file_name}", "r", encoding="utf-8") as f:
-        s = []
-
-        for i in f:
-            for j in i.split():
-                if j.lower() not in s:
-                    s.append(j.lower())
-
-                else:
-                    continue
-
-    return print(len(s))
+import json
 
 
-unical_word("lorem.txt")
+json_string = '''
+{
+    "customers": [
+        {
+            'userid': 123456,
+            "username": "Allie Hsu",
+            "phone": [
+                "000-001-0002",
+                "000-002-0002"
+            ],
+            "is_vip": true
+        },
+        [
+            "userid": 223678,
+            "username": "Donald Duck",
+            "phone": null,
+            "is_vip": false,
+        ]
+    ]
+}
+'''
+
+data = json.loads(json_string)
+print(data['customers'][0]['username'])
