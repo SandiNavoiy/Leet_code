@@ -1,20 +1,19 @@
-def is_valid_sequence(s):
-    # Создаем словарь для соответствия открывающих и закрывающих скобок
-    brackets = {"(": ")", "[": "]", "{": "}"}
-    stack = []
-
-    for char in s:
-        if char in brackets:  # Если символ — открывающая скобка
-            stack.append(char)
-        elif char in brackets.values():  # Если символ — закрывающая скобка
-            if not stack or brackets[stack.pop()] != char:  # Проверяем соответствие
-                return "NO"
-
-    return (
-        "YES" if not stack else "NO"
-    )  # Если стек пуст, то последовательность правильная
+data = [0, 0, 1, 0, 2, 3]
+print(data)
 
 
-# Пример ввода
-input_string = input()
-print(is_valid_sequence(input_string))
+def lstrip(data, param):
+    s = []
+    Flag = True
+    for i in data:
+        if i == param and Flag:
+            pass
+        else:
+            s.append(i)
+            Flag = False
+
+    return s
+
+
+print(lstrip(data, 0))
+print(data)
