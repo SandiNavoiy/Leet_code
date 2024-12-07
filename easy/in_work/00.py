@@ -1,19 +1,11 @@
-data = [0, 0, 1, 0, 2, 3]
-print(data)
+def coroutine():
+    a = yield 10
+    b = yield
+    yield a + b
 
-
-def lstrip(data, param):
-    s = []
-    Flag = True
-    for i in data:
-        if i == param and Flag:
-            pass
-        else:
-            s.append(i)
-            Flag = False
-
-    return s
-
-
-print(lstrip(data, 0))
-print(data)
+coro = coroutine()
+value = next(coro)
+print(value)
+# coro.send(23)
+# result = coro.send(value)
+# print(result)
