@@ -1,19 +1,5 @@
-data = [0, 0, 1, 0, 2, 3]
-print(data)
+from datetime import date
 
+dt = date(2023, 6, 7)
 
-def lstrip(data, param):
-    s = []
-    Flag = True
-    for i in data:
-        if i == param and Flag:
-            pass
-        else:
-            s.append(i)
-            Flag = False
-
-    return s
-
-
-print(lstrip(data, 0))
-print(data)
+new_date = dt.replace(year= 2023, month = 5, day = 8)
