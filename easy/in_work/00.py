@@ -1,11 +1,11 @@
-def coroutine():
-    a = yield 10
-    b = yield
-    yield a + b
+def flatten(lst):
+    # проверяем, не пустой ли список.
+    for i in lst:
+        if isinstance(i, list):
+            yield  from flatten(i)
+        else:
+            yield i
 
-coro = coroutine()
-value = next(coro)
-print(value)
-# coro.send(23)
-# result = coro.send(value)
-# print(result)
+
+for element in flatten([1, [2], [3, [4]]]):
+    print(element)
