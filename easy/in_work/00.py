@@ -1,5 +1,7 @@
-from datetime import date
+from datetime import datetime
 
-dt = date(2023, 6, 7)
+first_flight = datetime(1961, 4, 12, 9, 7, 0)
 
-new_date = dt.replace(year= 2023, month = 5, day = 8)
+
+print(first_flight)
+# 1961-04-12 09:07:00
