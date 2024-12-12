@@ -1,11 +1,11 @@
-code = input()
-n = int(input())
-if (code == "sq" or code == "tr") and 1 <= n <= 9:
-    if code == "sq":
-        for i in range(n):
-            print("#"*2*n)
-    else:
-        for i in range(n):
-            print(" "*(n-i) + "#"*(2*i+1))
-else:
-    print("WRONG_DATA")
+from datetime import datetime, timedelta
+
+# Ввод даты от пользователя
+input_date_str = input()
+
+# Преобразование строки в объект даты
+input_date = datetime.strptime(input_date_str, "%m/%d/%Y")
+for i in range(15):
+    input_date += timedelta(days=1)  # Следующий день
+    print(input_date.strftime("%d-%m-%Y"))
+# Вычисление дат
