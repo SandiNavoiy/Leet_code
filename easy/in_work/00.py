@@ -1,34 +1,48 @@
-from collections import UserString
-
-# Напишите определение класса StringWithSort
+from collections import Counter
 
 
-# Проверки для класса StringWithSort
-
-# Пример использования:
-class StringWithSort:
-    def __init__(self, s: str):
-        self.data = UserString(s)
-
-    def sort(self, key=None, reverse=False):
-        temp = sorted(str(self.data), key=key, reverse=reverse)
-        # Соединяем отсортированные символы в строку
-        return ''.join(temp)
+def find_difference_with_counter(lst1: list, lst2: list) -> list:
+    c1 = Counter(lst1)
+    c2 = Counter(lst2)
+    rez = []
+    for i in c1 - c2:
+        rez.append(i)
+    rez.sort()
+    return rez
 
 
-
-
-
-
-s = StringWithSort("Golden retriver")
-
-assert s.sort() == ' Gdeeeilnorrrtv'
-assert s.data == 'Golden retriver'
-
-assert s.sort(reverse=True) == 'vtrrronlieeedG '
+print(find_difference_with_counter([1, 1, 2, 3, 3, 4, 4, 5, 6, 7], [1, 1, 2, 4, 5, 6]))
+assert find_difference_with_counter([1, 2, 2, 3, 4, 4, 5], [2, 3, 3, 4, 5, 6]) == [
+    1,
+    2,
+    4,
+]
 #
-new_s = StringWithSort('HelloMyFriend')
-# # При обычной сортироки сперва идут заглавные буквы потом строчные
-assert new_s.sort() == 'FHMdeeillnory'
-# # Сортировка с ключом lower, который во время сравнения все буквы делает строчными
-assert new_s.sort(key=str.lower) == 'deeFHillMnory'
+assert find_difference_with_counter([5, 4, 5, 1, 2, 7, 3], [2, 3, 3, 4, 5, 6]) == [
+    1,
+    5,
+    7,
+]
+
+assert find_difference_with_counter(
+    [1, 1, 2, 3, 3, 4, 4, 5, 6, 7], [1, 1, 2, 4, 5, 6]
+) == [3, 3, 4, 7]
+
+# assert find_difference_with_counter(
+#     [1, 1, 1, 1],
+#     [
+#         1,
+#         1,
+#     ],
+# ) == [1, 1]
+
+# assert (
+#     find_difference_with_counter(
+#         [
+#             1,
+#             1,
+#         ],
+#         [1, 1, 1, 1],
+#     )
+#     == []
+# )
