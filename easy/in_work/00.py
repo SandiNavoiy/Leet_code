@@ -1,19 +1,21 @@
-from collections import defaultdict
+class Descriptor:
 
-sales = [('Clothing', 5.0),
-         ('Clothing', 6.0),
-         ('Outdoor', 7.0),
-         ('Grocery', 2.0),
-         ('Grocery', 3.0),
-         ('Grocery', 2.0)]
+    def __set__(self, instance, value):
+        instance._value = value
 
-d= defaultdict(int)
-for i in sales:
-    d[i[0]] += i[1]
-name = ""
-col = 0
-for i, v in d.items():
-    if v > col:
-        col = v
-        name = i
-print(f"{name} - {col}")
+    def __get__(self, instance, owner):
+        return instance._value
+
+
+class Student:
+    name = Descriptor()
+    marks = Descriptor()
+
+
+misha = Student()
+
+misha.marks = [3, 4, 5]
+misha.name = 'Михалыч'
+
+print(misha.marks)
+print(misha.name)
