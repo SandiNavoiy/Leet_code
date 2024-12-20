@@ -1,21 +1,19 @@
-class Descriptor:
+from collections import deque
 
-    def __set__(self, instance, value):
-        instance._value = value
+# q = deque(list(map(int, input().split())))
 
-    def __get__(self, instance, owner):
-        return instance._value
+q = deque([3, 7, 2, 5, 9])
 
+fist = 0
+second = 0
+while len(q) > 0:
+    fist += q.popleft()
+    if len(q) > 0:
+        second += q.pop()
+if fist > second:
+    print("FIRST")
+elif fist < second:
+    print("SECOND")
 
-class Student:
-    name = Descriptor()
-    marks = Descriptor()
-
-
-misha = Student()
-
-misha.marks = [3, 4, 5]
-misha.name = 'Михалыч'
-
-print(misha.marks)
-print(misha.name)
+else:
+    print("DRAW")
