@@ -1,19 +1,29 @@
-from decimal import Decimal, ROUND_UP
+import os
+from datetime import time
 
-def calculate_final_amount(principal, rate, years):
-    principal = Decimal(principal)
-    rate = Decimal(rate) / 100
 
-    for _ in range(years):
-        principal += principal * rate
+import os
+import time
 
-    return principal.quantize(Decimal('0.0001'), rounding=ROUND_UP)
+path = "."
+files_lst = os.listdir(path)
+print(files_lst)
+idxs = list()
 
-# Input reading
+for idx in range(len(files_lst)):
+    print(idx)
+    name = os.path.split(files_lst[idx])[1]
 
-principal = input()
-rate = input()
-years = input()
+    if os.path.isfile(os.path.join(path, name)):
+        idxs.append(idx)
 
-final_amount = calculate_final_amount(principal, rate, int(years))
-print(final_amount)
+print(idxs)
+for indx in range(len(idxs)):
+    print("File         :", files_lst[indx])
+    print("Access time  :", time.ctime(os.path.getatime(files_lst[indx])))
+    print("Modified time:", time.ctime(os.path.getmtime(files_lst[indx])))
+    print("Change time  :", time.ctime(os.path.getctime(files_lst[indx])))
+    print("Size         :", os.path.getsize(files_lst[indx]))
+    if indx == len(idxs) - 1:
+        break
+    print("---------------------------------------")
