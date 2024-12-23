@@ -1,24 +1,10 @@
 import os
-import time
+import stat
 
-path = "."
-x = os.listdir(path)
-file = [i for i in x if os.path.isfile(i)]
-dir = [i for i in x if os.path.isdir(i)]
 
-print(file)
-print(dir)
+def get_permissions(path: str):
+    x = os.stat(path).st_mode
+    return stat.filemode(x)[1:]
 
-for i in file:
-    print("File         :", i)
-    print("Access time  :", time.ctime(os.path.getatime(i)))
-    print("Modified time:", time.ctime(os.path.getmtime(i)))
-    print("Change time  :", time.ctime(os.path.getctime(i)))
-    print("Size         :", os.path.getsize(i))
 
-for i in dir:
-    print("dir         :", i)
-    print("Access time  :", time.ctime(os.path.getatime(i)))
-    print("Modified time:", time.ctime(os.path.getmtime(i)))
-    print("Change time  :", time.ctime(os.path.getctime(i)))
-    print("Size         :", os.path.getsize(i))
+print(get_permissions("00.py"))
