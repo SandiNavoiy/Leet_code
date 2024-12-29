@@ -1,26 +1,11 @@
-from pprint import pprint
+import itertools
 
-data = {
-    "users": [
-        {
-            "userId": 1,
-            "firstName": "Krish",
-            "lastName": "Lee",
-            "emailAddress": "krish.lee@example.com"
-        },
-        {
-            "userId": 2,
-            "firstName": "racks",
-            "lastName": "jacson",
-            "emailAddress": "racks.jacson@example.com"
-        },
-        {
-            "userId": 3,
-            "firstName": "denial",
-            "lastName": "roast",
-            "emailAddress": "denial.roast@example.com"
-        }
-    ]
-}
-
-pprint(data)
+x = 17
+y = 32684323
+rez = [chr(i + 64) for i in range(1, x+1)]
+count = 1
+for i in itertools.permutations(rez):
+    if count == y:
+        print(' '.join(map(str, i)))
+        break
+    count = count + 1
