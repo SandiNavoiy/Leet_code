@@ -28,10 +28,13 @@ class TestBookClass(unittest.TestCase):
         with self.assertRaises(TypeError):
             Book()
 
-    # def test__str__method(self):
-    #     with self.assertRaises(TypeError):
-    #         Book()
-    #
+    def test__str__method(self):
+        r = Book(1, 2, 3, 4)
+
+
+        self.assertEqual(print(r), "1 by 2")
+
+
     # def test_get_reading_time(self):
     #     pass
     #
