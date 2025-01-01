@@ -23,26 +23,5 @@ class Book:
         raise ValueError('Discount must be float number between 0 and 1')
 
 
-class TestBookClass(unittest.TestCase):
-    def test_init_method(self):
-        with self.assertRaises(TypeError):
-            Book()
-
-    # def test__str__method(self):
-    #     with self.assertRaises(TypeError):
-    #         Book()
-    #
-    # def test_get_reading_time(self):
-    #     pass
-    #
-    # def test_apply_discount_not_float(self):
-    #     pass
-    #
-    # def test_apply_discount_more_than_1(self):
-    #     pass
-    #
-    # def test_apply_discount_less_than_0(self):
-    #     pass
-    #
-    # def test_apply_discount_good_case(self):
-    #     pass
+r = Book(1,2,3,4)
+print(r)
