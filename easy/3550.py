@@ -1,14 +1,6 @@
-class Solution:
-    def smallestIndex(self, nums: list[int]) -> int:
-        """Наименьший индекс с суммой цифр, равной индексу"""
+n = (input())
 
-        for i in range(len(nums)):
-            if sum([int(x) for x in str(nums[i])]) == i:
-                return i
-
-
-        return -1
-
-
-s = Solution()
-print(s.smallestIndex([1,3,2]))
+if int(n[0]) +int(n[1]) +int(n[2]) == int(n[3])+int(n[4])+int(n[5]):
+    print("Счастливый")
+else:
+    print("Обычный")
