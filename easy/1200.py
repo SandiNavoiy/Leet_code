@@ -1,21 +1,54 @@
 class Solution:
     def minimumAbsDifference(self, arr: list[int]) -> list[list[int]]:
-        """Минимальная абсолютная разница"""
+        """Минимальная абсолютная разность"""
+        # сортируем массив для хохождения абсолютной разности
         arr.sort()
-        razn = []
-        rez = []
+        # устанавливаем изначально максимальную обсолютную разнолсть,
+        min_razn = 99999999999999999999999999
+        # находим перебором эту разность до последнего элемента
         for i in range(1, len(arr)):
-            razn.append(abs(arr[i] - arr[i - 1]))
-        print(razn)
-        c = min(razn)
+            min_razn = min(min_razn, abs(arr[i] - arr[i - 1]))
+        # массив вывода
+        res = []
+        # находим пары, учитывая что в любом случае нас интересует разность только двух рядом стоящих элементов
         for i in range(1, len(arr)):
-            if abs(arr[i] - arr[i - 1]) == c:
-                rez.append([arr[i - 1], arr[i]])
+            if arr[i] - arr[i - 1] == min_razn:
+                res.append([arr[i - 1], arr[i]])
 
-        return rez
+        return res
 
 
-arr = [3, 8, -10, 23, 19, -4, -14, 27]
 s = Solution()
-print(s.minimumAbsDifference(arr))
-# [[-14,-10],[19,23],[23,27]]
+print(
+    s.minimumAbsDifference(
+        [
+            188,
+            9,
+            -189,
+            -112,
+            165,
+            4,
+            -141,
+            179,
+            -154,
+            258,
+            53,
+            71,
+            201,
+            204,
+            121,
+            215,
+            259,
+            -22,
+            34,
+            -213,
+            -88,
+            -192,
+            118,
+            -221,
+            130,
+            -86,
+            209,
+        ]
+    )
+)
