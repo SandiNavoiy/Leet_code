@@ -1,7 +1,7 @@
 class Solution:
     def hasMatch(self, s: str, p: str) -> bool:
-        ''''''
-        x  = p.split('*')
+        """"""
+        x = p.split("*")
         first = s.find(x[0])
         if first == -1:
             return False

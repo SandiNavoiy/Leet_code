@@ -1,6 +1,6 @@
 class Solution:
     def countSubarrays(self, nums: list[int]) -> int:
-        ''''''
+        """"""
 
         count = 0
         rez = nums[:3]
@@ -8,7 +8,6 @@ class Solution:
             count += 1
 
         for i in range(3, len(nums)):
-
             rez.pop(0)
             rez.append(nums[i])
             if rez[0] + rez[2] == rez[1] / 2:
@@ -17,4 +16,4 @@ class Solution:
 
 
 s = Solution()
-print(s.countSubarrays([1,2,1,4,1]))  # Output: 10
+print(s.countSubarrays([1, 2, 1, 4, 1]))  # Output: 10

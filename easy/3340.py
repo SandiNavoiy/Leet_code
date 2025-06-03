@@ -10,9 +10,8 @@ class Solution:
             else:
                 nechet += rez[i]
 
+        return chet == nechet
 
-
-        return  chet == nechet
 
 n = "1234"
 s = Solution()

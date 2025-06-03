@@ -15,8 +15,6 @@ class Solution:
         )
 
 
-
-
 red = 2
 blue = 4
 s = Solution()

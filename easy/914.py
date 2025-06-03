@@ -16,5 +16,6 @@ class Solution:
 
         return x > 1
 
+
 s = Solution()
-print(s.hasGroupsSizeX([1,2,3,4,4,3,2,1]))  # True
+print(s.hasGroupsSizeX([1, 2, 3, 4, 4, 3, 2, 1]))  # True

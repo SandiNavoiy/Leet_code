@@ -1,6 +1,6 @@
 class Solution:
     def minimumOperations(self, nums: list[int]) -> int:
-        ''''''
+        """"""
 
         count = 0
         if len(nums) == len(set(nums)):
@@ -15,5 +15,6 @@ class Solution:
                 if len(nums) == len(set(nums)):
                     return count
 
+
 s = Solution()
-print(s.minimumOperations([6,7,8,9]))
+print(s.minimumOperations([6, 7, 8, 9]))

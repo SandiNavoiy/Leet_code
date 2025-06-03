@@ -5,8 +5,7 @@ class Solution:
             if "0" not in bin(n)[2:]:
                 return n
             else:
-                n +=1
-
+                n += 1
 
 
 s = Solution()

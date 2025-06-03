@@ -1,6 +1,7 @@
 class Solution:
     def generateKey(self, num1: int, num2: int, num3: int) -> int:
         """"""
+
         def pp(x):
             if len(str(x)) == 4:
                 return str(x)
@@ -19,8 +20,8 @@ class Solution:
         for i in range(4):
             rez = rez + str(min(int(num1[i]), int(num2[i]), int(num3[i])))
 
-
         return int(rez)
+
 
 num1 = 1
 num2 = 10

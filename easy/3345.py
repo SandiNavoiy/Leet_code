@@ -6,14 +6,13 @@ class Solution:
         """Наименьшая делимая цифра произведения I"""
 
         while True:
-            s = [int( i) for i in str(n)]
-            ddd = reduce(lambda x, y: x*y, s, 1)
-            if ddd%t==0:
+            s = [int(i) for i in str(n)]
+            ddd = reduce(lambda x, y: x * y, s, 1)
+            if ddd % t == 0:
                 return n
             else:
-                n = n +1
-
+                n = n + 1
 
 
 s = Solution()
-print(s.smallestNumber(10,2))
+print(s.smallestNumber(10, 2))

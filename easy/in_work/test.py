@@ -16,12 +16,12 @@ class Book:
 
     def apply_discount(self, discount):
         if not isinstance(discount, float):
-            raise ValueError('Discount must be float number')
+            raise ValueError("Discount must be float number")
         if 0 <= discount <= 1:
             discounted_price = self.price - (discount * self.price)
             return f"${discounted_price}"
-        raise ValueError('Discount must be float number between 0 and 1')
+        raise ValueError("Discount must be float number between 0 and 1")
 
 
-r = Book(1,2,3,4)
+r = Book(1, 2, 3, 4)
 print(r)

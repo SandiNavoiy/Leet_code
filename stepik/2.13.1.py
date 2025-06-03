@@ -29,4 +29,6 @@ class Stack:
         next_node = Node(value)
         next_node.next_node = self.top
         self.top = next_node
-#ckvkjkf
+
+
+# ckvkjkf
