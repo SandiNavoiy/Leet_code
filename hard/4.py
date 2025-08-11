@@ -9,9 +9,6 @@ class Solution:
         return np.median(x)
 
 
-
-
-
 nums1 = [1, 3]
 nums2 = [2]
 s = Solution()
