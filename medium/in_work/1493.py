@@ -1,18 +1,18 @@
 class Solution:
     def longestSubarray(self, nums: list[int]) -> int:
         """"""
-
         rez = 0
-        for i in range(len(nums)):
-            for j in range(i + 1, len(nums) + 1):
-                if nums[i:j].count(0) <= 1:
-                    rez = max(rez, len(nums[i:j]) - 1)
-                else:
-                    break
+        start = 0
+        for end in range(len(nums)):
+            rez = max(rez, end - start + 1)
+
+
+
         return rez
 
 
-nums = [0, 1, 1, 1, 0, 1, 1, 0, 1]
+
+nums = [1,1,1,0]
 
 
 s = Solution()
