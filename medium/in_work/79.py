@@ -1,9 +1,14 @@
 class Solution:
     def exist(self, board: list[list[str]], word: str) -> bool:
         """"""
-        for i in range(len(board)):
-            for j in range(len(board[0])):
-                pass
+        i = 0
+        j = 0
+        flaf = 0
+        while i < len(board) and j < len(board[0]):
+            if board[i][j] == word[0]:
+
+
+
 
 
 board = [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]]
