@@ -1,11 +1,4 @@
-class Solution:
-    def alternatingSum(self, nums) -> int:
-        rez = 0
-        for i in range(len(nums)):
-            if i%2 == 0:
-                rez += nums[i]
-            else:
-                rez -= nums[i]
-
-        return rez
-
+x = int(input())
+k = float(input())
+n  = int(input())
+s = round(x*(1+(k/12*100))**n)
