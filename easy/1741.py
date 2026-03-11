@@ -1,0 +1,1 @@
+select event_day as day,
