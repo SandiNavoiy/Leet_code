@@ -26,3 +26,4 @@ class Solution:
             cur = cur.next
 
         return head.next
+
