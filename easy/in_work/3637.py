@@ -3,26 +3,45 @@ from typing import List
 
 class Solution:
     def isTrionic(self, nums: List[int]) -> bool:
-        '''Трионический массив I'''
-        p = 0
-        q = 0
-        n = 0
-        for i in range(len(nums)):
-            if nums[i+1] < nums[i]:
-                p = i
-                break
-        for i in range(p, len(nums)):
-            if nums[i+1] > nums[i]:
-                q = i
-                break
-        for i in range(q, len(nums)-1):
-            if nums[i+1] < nums[i]:
-                n = i
-                break
-            if i+1 == n-1:
-                n = i
+        n_len = len(nums)  # переименовал, чтобы не путать с твоей переменной n
 
-        return p, q, n
+        # 1. Исправлено условие длины (минимум 4 элемента для 3 сегментов с переходами)
+        if n_len < 4:
+            return False
+
+        p = 0
+        # 2. ИСПРАВЛЕНО: range до n_len - 1, чтобы безопасно брать i+1
+        for i in range(n_len - 1):
+            if nums[i + 1] > nums[i]:
+                p = i + 1  # двигаем вершину вперёд, пока растёт
+            else:
+                break  # как только перестало расти — стоп, это наша вершина
+
+        # 3. ВАЖНО: Проверяем, что у нас реально было возрастание в начале (p > 0)
+        # и что вершина не в самом конце (иначе нет места для убывания и нового роста)
+        if p == 0 or p == n_len - 1:
+            return False
+
+        q = p
+        # 4. Ищем дно. Двигаем q, пока идёт убывание
+        for i in range(p, n_len - 1):
+            if nums[i + 1] < nums[i]:
+                q = i + 1
+            else:
+                break  # как только перестало убывать — стоп, это наше дно
+
+        # Проверяем, что дно реально сдвинулось (q > p) и не уперлось в конец
+        if q == p or q == n_len - 1:
+            return False
+
+        # 5. ПРОВЕРКА ХВОСТА.
+        # Вместо поиска спада и сложной логики с n, просто проверяем, что ВСЁ возрастает.
+        # Если находим хоть один шаг, который не вверх (<=), значит, условие нарушено.
+        for i in range(q, n_len - 1):
+            if nums[i + 1] <= nums[i]:  # не строго больше
+                return False
+
+        return True
 
 
 
