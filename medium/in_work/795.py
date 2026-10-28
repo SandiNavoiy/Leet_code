@@ -1,24 +1,25 @@
 class Solution:
     def numSubarrayBoundedMax(self, nums: list[int], left: int, right: int) -> int:
         """Количество подмассивов с ограниченным максимумом"""
-        rez = []
+
+        rez = 0
         start = 0
-        end = 1
-        temp = nums[start]
-        while start <= len(nums) and end < len(nums)+1:
-            if temp <= right:
-                rez.append(nums[start:end])
-                if end < len(nums):
-                    temp = max(nums[end], temp)
-                end = end + 1
-            else:
-                while start < end:
-                    start += 1
+        end = 0
+        for i in range(len(nums)):
+            if nums[i] >= right:
+                end = i
+                start = i
+                continue
+            elif nums[i] >= left:
 
-                end = end +1
-                temp = nums[start]
+                rez = rez + (end - start+1)
+                end += 1
 
-        return len(rez)
+
+        return rez
+
+
+
 
 
 
