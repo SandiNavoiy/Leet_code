@@ -3,23 +3,19 @@ class Solution:
         """Количество подмассивов с ограниченным максимумом"""
 
         rez = 0
-        start = 0
-        end = 0
+        start = -1
+        end = -1
         for i in range(len(nums)):
-            if nums[i] >= right:
+            if nums[i] > right:
                 end = i
                 start = i
                 continue
             elif nums[i] >= left:
-
-                rez = rez + (end - start+1)
-                end += 1
+                end = i
+            rez = rez + (end - start)
 
 
         return rez
-
-
-
 
 
 
