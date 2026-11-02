@@ -1,14 +1,26 @@
+
 class Solution:
     def isPerfectSquare(self, num: int) -> bool:
-        """"""
-        x = num**0.5
-        if int(x) == x:
+        """Действительный идеальный квадрат"""
+        if num == 1:
             return True
-        else:
-            return False
+        left = 0
+        right = num//2
+        while left <= right:
+            mid = (left+right)//2
+            if mid * mid == num:
+                return True
+            elif mid * mid > num:
+                right = mid - 1
+            elif mid * mid < num:
+                left = mid + 1
+
+        return False
 
 
-num = 15
+
+
+num = 4
 
 s = Solution()
 print(s.isPerfectSquare(num))
